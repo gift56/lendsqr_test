@@ -69,7 +69,7 @@ const Dashboard = () => {
           <UserTable columns={usersColumns} data={activities} />
         </div>
         <div className={style.mobileTable}>
-          <MobileTable data={activities} show={false} text="" to="/dashboard/home/" className="" />
+          <MobileTable data={activities} show={false} text="" to="/dashboard/home/" className="" idPresent={false} />
         </div>
         <div className={style.paginate}>
           <div className={style.showing}>

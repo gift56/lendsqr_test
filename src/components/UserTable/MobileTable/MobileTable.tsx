@@ -7,9 +7,10 @@ interface IProp {
   show: boolean;
   className: string;
   to: any;
+  idPresent: boolean;
 }
 
-const MobileTable = ({ data, text, show, className, to }: IProp) => {
+const MobileTable = ({ data, text, show, className, to, idPresent }: IProp) => {
   const statusColor = (value: any) => {
     if (value === "Active") {
       return style.active;
@@ -25,20 +26,37 @@ const MobileTable = ({ data, text, show, className, to }: IProp) => {
   return (
     <div className={`${style.table} ${className}`}>
       {show === true && <h2 className={style.h2}>{text}</h2>}
-      <div className={style.contentCon}>
-        {data.slice(0, 8).map((item: any, i: any) => (
-          <Link to={`${to}`} key={i} className={style.contentWrapper}>
-            <div className={style.contents}>
-              <h2 className={style.content}>{item.username}</h2>
-              <p className={style.content}>{item.email}</p>
+      {idPresent === true ? (
+        <div className={style.contentCon}>
+          {data.slice(0, 8).map((item: any, i: any) => (
+            <Link to={`${to}${i}`} key={i} className={style.contentWrapper}>
+              <div className={style.contents}>
+                <h2 className={style.content}>{item.username}</h2>
+                <p className={style.content}>{item.email}</p>
+              </div>
+              <div className={style.contents2}>
+                <p className={style.content}>{item.phone}</p>
+                <p className={`${statusColor(item.status)}`}>{item.status}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      ) : (
+        <div className={style.contentCon}>
+          {data.slice(0, 8).map((item: any, i: any) => (
+            <div key={i} className={style.contentWrapper}>
+              <div className={style.contents}>
+                <h2 className={style.content}>{item.username}</h2>
+                <p className={style.content}>{item.email}</p>
+              </div>
+              <div className={style.contents2}>
+                <p className={style.content}>{item.phone}</p>
+                <p className={`${statusColor(item.status)}`}>{item.status}</p>
+              </div>
             </div>
-            <div className={style.contents2}>
-              <p className={style.content}>{item.phone}</p>
-              <p className={`${statusColor(item.status)}`}>{item.status}</p>
-            </div>
-          </Link>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
