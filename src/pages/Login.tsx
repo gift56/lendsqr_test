@@ -19,11 +19,23 @@ const Login = () => {
     actions.resetForm();
   };
 
-  const {} = useFormik({
+  const {
+    handleSubmit,
+    handleChange,
+    handleBlur,
+    values,
+    errors,
+    touched,
+    isSubmitting,
+  }: any = useFormik({
     initialValues,
     validationSchema: loginSchema,
     onSubmit,
   });
+
+  const getError = (key: any) => {
+    return touched[key] && errors[key];
+  };
 
   return (
     <div className={styles.warpper}>
@@ -42,14 +54,14 @@ const Login = () => {
           <h1>Welcome!</h1>
           <p>Enter details to login.</p>
         </div>
-        <form>
+        <form onSubmit={handleSubmit}>
           <CustomizeInput
             type="text"
             name="email"
-            // value={values.email}
-            // onChange={handleChange}
-            // onBlur={handleBlur}
-            // error={getError("email")}
+            value={values.email}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={getError("email")}
             placeholder="Email"
             className="input-control"
           />
@@ -58,10 +70,9 @@ const Login = () => {
               type={`${showPassword ? "text" : "password"}`}
               name="password"
               containerClass={styles.customizeInput}
-              // value={values.password}
-              // onChange={handleChange}
-              // onBlur={handleBlur}
-              // error={getError("password")}
+              value={values.password}
+              onChange={handleChange}
+              onBlur={handleBlur}
               placeholder="Password"
               className={styles.input}
               autoComplete="off"
@@ -71,7 +82,7 @@ const Login = () => {
           <p>Forgot PASSWORD?</p>
           <Button
             type="submit"
-            disabled={true}
+            disabled={isSubmitting}
             onClick={() => {}}
             text="LOG IN"
             className={styles.submitBtn}
