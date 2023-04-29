@@ -1,5 +1,5 @@
 import style from "../../../styles/dashoboard.module.scss";
-import { Logo, notifyIcon } from "../../../assets";
+import { Logo, UserProfile, dropdownIcon, notifyIcon } from "../../../assets";
 import { CustomizeInput } from "../..";
 import { GrSearch } from "react-icons/gr";
 import { Link } from "react-router-dom";
@@ -22,7 +22,9 @@ const DashboardHeader = () => {
         <Link to="/dashboard">Docs</Link>
         <img src={notifyIcon} alt="/" />
         <div className={style.userDrop}>
-            
+          <img src={UserProfile} alt="profile_imgae" />
+          <span>Adedeji</span>
+          <img src={dropdownIcon} alt="/" />
         </div>
       </div>
     </header>
