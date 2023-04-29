@@ -7,6 +7,7 @@ import Pagination from "./Pagination/Pagination";
 import MobileTable from "./UserTable/MobileTable/MobileTable";
 import UserTable from "./UserTable/UserTable";
 import FilterModal from "./Modals/FilterModal";
+import CustormizeSelect from "./Inputs/CustormizeSelect";
 
 export {
   Button,
@@ -18,4 +19,5 @@ export {
   MobileTable,
   UserTable,
   FilterModal,
+  CustormizeSelect,
 };

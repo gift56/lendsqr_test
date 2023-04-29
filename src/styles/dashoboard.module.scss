@@ -221,6 +221,14 @@
       height: 100%;
       width: 26%;
       padding: 25px;
+      @include flexbox($direction: column, $align: start, $justify: start);
+      gap: 20px;
+      .label {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        color: $grayColor;
+      }
     }
   }
   .mobileTable {

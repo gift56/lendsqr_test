@@ -26,18 +26,17 @@ body {
   background-color: transparent;
 }
 select {
-  background-image: url(../../assets/icons/selectIcon.svg);
-  background-repeat: no-repeat;
-  background-position: right 16px center;
+  background-image: url(./assets/icons/selectIcon.svg) !important;
+  background-repeat: no-repeat !important;
+  background-position: right 16px center !important;
   appearance: none;
   cursor: pointer;
 }
 ::-webkit-calendar-picker-indicator {
   width: 50px;
   height: 48px;
-  background-color: #e7e7e7;
-  background-image: url(../../assets/icons/calendar.svg);
-  background-size: 40%;
-  background-position: center;
+  background-image: url(../../assets/icons/calendar.svg) !important;
+  background-size: 40% !important;
+  background-position: center !important;
   cursor: pointer;
 }
