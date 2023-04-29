@@ -200,6 +200,25 @@
   .cardContainer {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+    .card {
+      width: 100%;
+      background-color: $white;
+      border: 1px solid rgba(33, 63, 125, 0.06);
+      box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+      border-radius: 4px;
+      height: 160px;
+      padding: 20px;
+      @include flexbox($direction: column, $align: start, $justify: start);
+      gap: 15px;
+      h3 {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: $grayColor;
+      }
+    }
   }
 }
