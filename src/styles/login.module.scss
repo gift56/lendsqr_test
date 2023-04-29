@@ -80,6 +80,11 @@
       }
       @include flexbox($direction: column, $align: start);
       gap: 20px;
+      .showCon {
+        width: 100%;
+        @include flexbox($direction: column, $align: start);
+        gap: 4px;
+      }
       .showPassword {
         position: relative;
         width: 100%;

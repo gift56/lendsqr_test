@@ -65,19 +65,30 @@ const Login = () => {
             placeholder="Email"
             className="input-control"
           />
-          <div className={styles.showPassword}>
-            <CustomizeInput
-              type={`${showPassword ? "text" : "password"}`}
-              name="password"
-              containerClass={styles.customizeInput}
-              value={values.password}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              placeholder="Password"
-              className={styles.input}
-              autoComplete="off"
-            />
-            <p onClick={() => setShowPassword((prev) => !prev)}>Show</p>
+          <div className={styles.showCon}>
+            <div
+              className={`${styles.showPassword} ${
+                errors.password && touched.password ? "error" : ""
+              }`}
+            >
+              <CustomizeInput
+                type={`${showPassword ? "text" : "password"}`}
+                name="password"
+                containerClass={styles.customizeInput}
+                value={values.password}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                placeholder="Password"
+                className={styles.input}
+                autoComplete="off"
+              />
+              <p onClick={() => setShowPassword((prev) => !prev)}>Show</p>
+            </div>
+            {errors.password && touched.password ? (
+              <p className="errortxt">{errors.password}</p>
+            ) : (
+              ""
+            )}
           </div>
           <p>Forgot PASSWORD?</p>
           <Button
