@@ -1,8 +1,13 @@
 import { ButtonIProp } from "../../utils/types";
 
-const Button = ({ text, disabled, className }: ButtonIProp) => {
+const Button = ({ text, disabled, className, type, onClick }: ButtonIProp) => {
   return (
-    <button disabled={disabled} className={`${className}`}>
+    <button
+      disabled={disabled}
+      type={type}
+      onClick={onClick}
+      className={`${className}`}
+    >
       {text}
     </button>
   );
