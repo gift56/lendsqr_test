@@ -11,6 +11,9 @@ const Dashboard = () => {
           <Card data={item} key={i} />
         ))}
       </div>
+      <div className={style.tableCon}>
+        
+      </div>
     </div>
   );
 };

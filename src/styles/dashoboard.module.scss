@@ -183,7 +183,6 @@
 }
 
 // Dashboard Page
-
 .mainDashboard {
   width: 100%;
   padding: 50px 35px;
@@ -228,5 +227,9 @@
         color: $activeColor;
       }
     }
+  }
+  .tableCon {
+    @include flexbox($direction: column, $align: start, $justify: start);
+    gap: 30px;
   }
 }
