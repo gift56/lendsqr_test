@@ -131,6 +131,7 @@
     &:hover {
       background-color: #39cdcd17;
       transition: all 300ms ease;
+      border-left: 3px solid $primary;
       img,
       span {
         opacity: 1;

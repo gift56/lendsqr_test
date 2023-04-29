@@ -1,8 +1,10 @@
 import {
+  BriefCaseIcon,
   DecisionIcon,
   GuarntorIcon,
   KarmaIcon,
   LoanIcon,
+  ProductSavingIcon,
   RequestIcon,
   SavingsIcon,
   UsersIcon,
@@ -49,5 +51,22 @@ export const customersLink = [
     to: "/dashboard/karma",
     img: KarmaIcon,
     text: "Karma",
+  },
+];
+export const businessLink = [
+  {
+    to: "/dashboard/organization",
+    img: BriefCaseIcon,
+    text: "Organization",
+  },
+  {
+    to: "/dashboard/loan-product",
+    img: RequestIcon,
+    text: "Loan Products",
+  },
+  {
+    to: "/dashboard/loan-product",
+    img: ProductSavingIcon,
+    text: "Savings Products",
   },
 ];
