@@ -68,8 +68,41 @@
       .showPassword {
         position: relative;
         width: 100%;
+        @include flexbox;
+        border: 2px solid rgba(84, 95, 125, 0.15);
+        background: #ffffff;
+        border-radius: 5px;
+        height: 46px;
+        gap: 2px;
+        padding: 0 12px;
+        .input {
+          width: 100%;
+          height: 100%;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 19px;
+          font-family: $secondaryFont;
+          color: $grayColor;
+          border: none;
+          &::placeholder {
+            color: $grayColor;
+            font-weight: 400;
+            font-size: 14px;
+          }
+        }
         .customizeInput {
           height: 100%;
+        }
+        p {
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 16px;
+          text-align: center;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: $primary;
+          cursor: pointer;
+          user-select: none;
         }
       }
     }

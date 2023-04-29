@@ -26,9 +26,6 @@ img {
     font-weight: 400;
     font-size: 14px;
   }
-  &:focus {
-    border-color: $primary;
-  }
 }
 .customizeInputCon {
   @include flexbox($direction: column, $align: start, $justify: start);

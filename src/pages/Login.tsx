@@ -44,9 +44,10 @@ const Login = () => {
               // onBlur={handleBlur}
               // error={getError("password")}
               placeholder="Password"
-              className="input-control"
+              className={styles.input}
               autoComplete="off"
             />
+            <p onClick={() => setShowPassword((prev) => !prev)}>Show</p>
           </div>
         </form>
       </div>
