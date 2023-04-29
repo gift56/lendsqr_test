@@ -65,6 +65,13 @@
       width: 80%;
       @include flexbox($direction: column, $align: start);
       gap: 12px;
+      .showPassword {
+        position: relative;
+        width: 100%;
+        .customizeInput {
+          height: 100%;
+        }
+      }
     }
   }
 }

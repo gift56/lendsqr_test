@@ -5,7 +5,7 @@ import { CustomizeInput } from "../components";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-  
+
   return (
     <div className={styles.warpper}>
       <div className={styles.leftSide}>
@@ -34,17 +34,20 @@ const Login = () => {
             placeholder="Email"
             className="input-control"
           />
-          <CustomizeInput
-            type="password"
-            name="password"
-            containerClass="h-full"
-            // value={values.password}
-            // onChange={handleChange}
-            // onBlur={handleBlur}
-            // error={getError("password")}
-            placeholder="Password"
-            className="input-control"
-          />
+          <div className={styles.showPassword}>
+            <CustomizeInput
+              type={`${showPassword ? "text" : "password"}`}
+              name="password"
+              containerClass={styles.customizeInput}
+              // value={values.password}
+              // onChange={handleChange}
+              // onBlur={handleBlur}
+              // error={getError("password")}
+              placeholder="Password"
+              className="input-control"
+              autoComplete="off"
+            />
+          </div>
         </form>
       </div>
     </div>
