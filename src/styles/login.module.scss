@@ -8,17 +8,22 @@
   width: 100%;
   overflow: hidden;
   .leftSide {
+    display: none;
     position: relative;
     flex: 1;
     height: 100%;
-    @include flexbox($direction: column);
+    @include tab {
+      @include flexbox($direction: column);
+    }
     padding: 30px;
     gap: 30px;
     .logo {
       position: absolute;
       top: 40px;
       left: 40px;
-      width: 160px;
+      @include laptop {
+        width: 160px;
+      }
       height: 28px;
       img {
         width: 100%;
@@ -29,7 +34,9 @@
     .mainImg {
       width: 100%;
       .loginImg {
-        width: 600px;
+        @include laptop {
+          width: 600px;
+        }
         height: 337px;
         img {
           width: 100%;
@@ -40,10 +47,14 @@
     }
   }
   .rightSide {
-    flex: 1;
+    width: 90%;
+    padding: 1rem;
+    @include tab {
+      flex: 1;
+      padding: 30px;
+    }
     background-color: $white;
     height: 100%;
-    padding: 30px;
     @include flexbox($direction: column, $align: start);
     gap: 24px;
     .welcomeText {
@@ -63,7 +74,10 @@
       }
     }
     form {
-      width: 80%;
+      width: 100%;
+      @include tab {
+        width: 80%;
+      }
       @include flexbox($direction: column, $align: start);
       gap: 20px;
       .showPassword {
