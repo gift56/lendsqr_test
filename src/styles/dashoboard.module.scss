@@ -201,14 +201,21 @@
 }
 .mainDashboard {
   width: 100%;
-  padding: 50px 35px;
+  padding: 20px 16px;
+  gap: 20px;
+  @include tablet {
+    padding: 50px 35px;
+    gap: 30px;
+  }
   height: 100vh;
   overflow-y: auto;
   @include flexbox($direction: column, $align: start, $justify: start);
-  gap: 30px;
   h2 {
+    font-size: 20px;
+    @include tablet {
+      font-size: 24px;
+    }
     font-weight: 500;
-    font-size: 24px;
     line-height: 28px;
     color: $activeColor;
   }
