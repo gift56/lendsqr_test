@@ -9,4 +9,8 @@
   height: 100vh;
   overflow: hidden;
   @include flexbox($direction: column, $align: start, $justify: start);
+  .wrapperContent {
+    width: 100%;
+    
+  }
 }
