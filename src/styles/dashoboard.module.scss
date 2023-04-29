@@ -116,11 +116,9 @@
 }
 
 // Sidebar Stylings
-
 .show {
   left: 0 !important;
 }
-
 .sidebarCon {
   width: 100%;
   @include flexbox($direction: column, $justify: start, $align: start);
@@ -182,4 +180,14 @@
   .settings {
     padding-bottom: 15vh;
   }
+}
+
+// Dashboard Page
+
+.mainDashboard {
+  width: 100%;
+  padding: 50px 35px;
+  height: 100vh;
+  overflow-y: auto;
+  @include flexbox($direction: column, $align: start, $justify: start);
 }
