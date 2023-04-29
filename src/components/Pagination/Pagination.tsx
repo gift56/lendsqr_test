@@ -1,6 +1,6 @@
 import ReactPaginate from "react-paginate";
 import style from "../../styles/pagination.module.scss";
-import { FiChevronLeft } from "react-icons/fi";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 interface Props {
   pageCount?: any;
@@ -12,7 +12,7 @@ const Pagination = ({ pageCount, handlePageClick }: Props) => {
     <div>
       <ReactPaginate
         breakLabel="..."
-        nextLabel="next"
+        nextLabel={<FiChevronRight />}
         onPageChange={handlePageClick}
         pageRangeDisplayed={3}
         pageCount={pageCount}
@@ -21,8 +21,8 @@ const Pagination = ({ pageCount, handlePageClick }: Props) => {
         containerClassName={style.paginationCon}
         pageLinkClassName={style.pageLink}
         previousLinkClassName={style.previous}
-        nextLinkClassName="text-[#FF2742] leading-[27px] text-[18px] font-normal capitalize"
-        activeLinkClassName="bg-[#FF2742] w-[45px] h-[45px] p-[10px] flex items-center justify-center text-white rounded-[5px]"
+        nextLinkClassName={style.previous}
+        activeLinkClassName={style.active}
       />
     </div>
   );

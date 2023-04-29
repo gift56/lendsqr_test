@@ -5,11 +5,22 @@
 .paginationCon {
   @include flexbox;
   gap: 16px;
+  .pageLink {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #545f7d77;
+    cursor: pointer;
+  }
+  .active {
+    color: $grayColor;
+  }
   .previous {
     background: rgba(33, 63, 125, 0.1);
     border-radius: 4px;
     width: 24px;
     height: 24px;
     @include flexbox;
+    cursor: pointer;
   }
 }
