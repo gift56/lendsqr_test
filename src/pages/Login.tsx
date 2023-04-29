@@ -14,7 +14,15 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <div className={styles.rightSide}></div>
+      <div className={styles.rightSide}>
+        <div className={styles.welcomeText}>
+          <h1>Welcome!</h1>
+          <p>Enter details to login.</p>
+        </div>
+        <form>
+          
+        </form>
+      </div>
     </div>
   );
 };

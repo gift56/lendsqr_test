@@ -41,7 +41,25 @@
   }
   .rightSide {
     flex: 1;
-    background-color: blue;
+    background-color: $white;
     height: 100%;
+    padding: 30px;
+    @include flexbox($direction: column, $align: start);
+    gap: 20px;
+    .welcomeText {
+      @include flexbox($direction: column, $align: start);
+      h1 {
+        color: $activeColor;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 55px;
+      }
+      p {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 27px;
+        color: $grayColor;
+      }
+    }
   }
 }
