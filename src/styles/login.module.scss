@@ -62,7 +62,9 @@
       }
     }
     form {
-      width: 100%;
+      width: 80%;
+      @include flexbox($direction: column, $align: start);
+      gap: 12px;
     }
   }
 }
