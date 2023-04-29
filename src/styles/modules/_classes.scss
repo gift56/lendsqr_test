@@ -41,7 +41,8 @@ img {
   border-color: $danger !important;
 }
 .errortxt {
-  color: $danger;
+  color: $danger !important;
   font-size: 12px;
   font-weight: 400;
+  text-transform: capitalize !important;
 }
