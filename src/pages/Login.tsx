@@ -2,9 +2,16 @@ import { useState } from "react";
 import styles from "../styles/login.module.scss";
 import { LoginImg, Logo } from "../assets";
 import { Button, CustomizeInput } from "../components";
+import { useFormik } from "formik";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+
+  const {} = useFormik({
+    initialValues,
+    validationSchema,
+    onSubmit,
+  });
 
   return (
     <div className={styles.warpper}>
