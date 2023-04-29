@@ -9,3 +9,22 @@
 img {
   -webkit-user-drag: none;
 }
+.input-control {
+  height: 50px;
+  background: #ffffff;
+  border: 2px solid rgba(84, 95, 125, 0.15);
+  border-radius: 5px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  font-family: $secondaryFont;
+  color: $grayColor;
+  &::placeholder {
+    color: $grayColor;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  &:focus {
+    border-color: $primary;
+  }
+}
