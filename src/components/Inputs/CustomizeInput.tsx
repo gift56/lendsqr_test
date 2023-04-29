@@ -15,7 +15,7 @@ const CustomizeInput = ({
   ...props
 }: any) => {
   return (
-    <div className={`flex flex-col gap-1 w-full ${containerClass}`}>
+    <div className={`customizeInputCon ${containerClass}`}>
       {showLabel === false && (
         <label htmlFor={htmlFor} className={labelClassName}>
           {label}
@@ -23,14 +23,14 @@ const CustomizeInput = ({
       )}
       <input
         {...props}
-        className={`${className} ${error ? "border !border-red-400" : ""}`}
+        className={`${className} ${error ? "error" : ""}`}
         id={id}
         onBlur={onBlur}
         onChange={onChange}
         accept={accept}
         onKeyDown={onKeyDown}
       />
-      {error ? <p className="text-xs text-red-600">{error}</p> : null}
+      {error ? <p className="errortxt">{error}</p> : null}
     </div>
   );
 };
