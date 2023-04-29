@@ -1,19 +1,3 @@
-interface IProp {
-  htmlFor: any;
-  showLabel: boolean;
-  id: string;
-  label: string;
-  className: string;
-  labelClassName: string;
-  inpuClassName: string;
-  error: any;
-  onChange: any;
-  onKeyDown: any;
-  onBlur: any;
-  accept: any;
-  containerClass: string;
-}
-
 const CustomizeInput = ({
   htmlFor,
   showLabel,
@@ -29,7 +13,7 @@ const CustomizeInput = ({
   accept,
   containerClass,
   ...props
-}: IProp) => {
+}: any) => {
   return (
     <div className={`flex flex-col gap-1 w-full ${containerClass}`}>
       {showLabel === false && (
