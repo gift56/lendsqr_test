@@ -1,8 +1,11 @@
+import { useState } from "react";
 import styles from "../styles/login.module.scss";
 import { LoginImg, Logo } from "../assets";
 import { CustomizeInput } from "../components";
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  
   return (
     <div className={styles.warpper}>
       <div className={styles.leftSide}>
