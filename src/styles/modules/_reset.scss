@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
-h1 {
+h1,
+p {
+  font-family: $secondaryFont;
+}
+
+body {
   font-family: $primaryFont;
 }
