@@ -13,6 +13,11 @@
     @content;
   }
 }
+@mixin phone {
+  @media screen and (min-width: 548px) {
+    @content;
+  }
+}
 
 @mixin flexbox($direction: row, $justify: center, $align: center) {
   display: flex;

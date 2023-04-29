@@ -4,7 +4,10 @@
 
 .header {
   width: 100%;
-  padding: 20px 35px;
+  padding: 20px 12px;
+  @include phone {
+    padding: 20px 35px;
+  }
   box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
   position: sticky;
   inset: 0;
@@ -12,8 +15,12 @@
   .logoArea {
     @include flexbox($justify: space-between);
     width: 50%;
+    gap: 12px;
     .logo {
-      width: 144px;
+      width: 120px;
+      @include phone {
+        width: 144px;
+      }
       height: 38px;
       img {
         width: 100%;
@@ -22,8 +29,14 @@
       }
     }
     .searchCon {
-      @include flexbox;
-      width: 380px;
+      display: none;
+      @include tablet {
+        @include flexbox;
+      }
+
+      @include tab {
+        width: 380px;
+      }
       height: 40px;
       border: 1px solid $activeColor;
       border-radius: 8px;
@@ -53,20 +66,37 @@
   }
   .dropDownArea {
     @include flexbox;
-    gap: 26px;
+    gap: 12px;
+    @include phone {
+      gap: 26px;
+    }
     a {
       font-weight: 400;
       font-size: 16px;
       line-height: 19px;
       text-decoration: underline;
       color: $activeColor;
+      display: none;
+      @include phone {
+        display: flex;
+      }
+    }
+    .notify {
+      display: none;
+      @include phone {
+        display: flex;
+      }
     }
     .userDrop {
       @include flexbox;
       gap: 12px;
       cursor: pointer;
       .user {
+        width: 30px;
         border-radius: 50%;
+        @include phone {
+          width: 48px;
+        }
       }
       span {
         font-weight: 500;

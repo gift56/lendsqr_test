@@ -29,7 +29,7 @@ const DashboardHeader = () => {
       </div>
       <div className={style.dropDownArea}>
         <Link to="/dashboard">Docs</Link>
-        <img src={notifyIcon} alt="/" />
+        <img src={notifyIcon} alt="/" className={style.notify} />
         <div className={style.userDrop}>
           <img src={UserProfile} alt="profile_image" className={style.user} />
           <span>Adedeji</span>
