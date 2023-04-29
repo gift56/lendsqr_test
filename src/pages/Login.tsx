@@ -1,7 +1,9 @@
 import styles from "../styles/login.module.scss";
 
 const Login = () => {
-  return <h1 className={styles.warpper}>Welcome!</h1>;
+  return <div className={styles.warpper}>
+    
+  </div>;
 };
 
 export default Login;
