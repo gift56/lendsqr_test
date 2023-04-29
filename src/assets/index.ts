@@ -29,7 +29,7 @@ import card1Icon from "./icons/usersIcon.svg";
 import card2Icon from "./icons/activeUserIcon.svg";
 import card3Icon from "./icons/loanUser.svg";
 import card4Icon from "./icons/savingUser.svg";
-import notifyIcon from "./icons/notify.svg";
+import notifyIcon from "./icons/notify.png";
 import Avatar from "./icons/avatar.svg";
 import BackIcon from "./icons/backarrow.svg";
 import SearchIcon from "./icons/search.svg";

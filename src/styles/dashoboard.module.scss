@@ -51,4 +51,8 @@
       }
     }
   }
+  .dropDownArea {
+    @include flexbox;
+    gap: 26px;
+  }
 }
