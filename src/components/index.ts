@@ -6,6 +6,7 @@ import Card from "./Card/Card";
 import Pagination from "./Pagination/Pagination";
 import MobileTable from "./UserTable/MobileTable/MobileTable";
 import UserTable from "./UserTable/UserTable";
+import FilterModal from "./Modals/FilterModal";
 
 export {
   Button,
@@ -15,5 +16,6 @@ export {
   Card,
   Pagination,
   MobileTable,
-  UserTable
+  UserTable,
+  FilterModal,
 };

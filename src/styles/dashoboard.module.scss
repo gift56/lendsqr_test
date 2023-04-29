@@ -205,9 +205,16 @@
   gap: 20px;
   .desktopTable {
     width: 100%;
+    position: relative;
     display: none;
     @include tab {
       display: flex;
+    }
+    .filterCon {
+      position: absolute;
+      top: 60px;
+      left: 20px;
+      background-color: $white;
     }
   }
   .mobileTable {
@@ -321,3 +328,5 @@
     }
   }
 }
+
+// Dashboard User

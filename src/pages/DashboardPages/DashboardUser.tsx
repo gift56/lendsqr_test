@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Card, MobileTable, Pagination, UserTable } from "../../components";
+import { Card, FilterModal, MobileTable, Pagination, UserTable } from "../../components";
 import { selectIcon } from "../../assets";
 import { cardData } from "../../utils/cardData";
 import { tableData, usersColumns } from "../../utils/tableData";
@@ -8,6 +8,7 @@ import style from "../../styles/dashoboard.module.scss";
 
 const DashboardUser = () => {
   const [data, setData] = useState(tableData);
+  const [showFilter, setShowFilter] = useState(false);
   const [itemOffset, setItemOffset] = useState(0);
   const itemsPerPage = 14;
   const endOffset = itemOffset + itemsPerPage;
@@ -66,7 +67,12 @@ const DashboardUser = () => {
       </div>
       <div className={style.tableCon}>
         <div className={style.desktopTable}>
-          <UserTable columns={usersColumns} data={activities} />
+          <UserTable
+            columns={usersColumns}
+            data={activities}
+            setShowFilter={setShowFilter}
+          />
+          <FilterModal show={showFilter} setShow={setShowFilter} />
         </div>
         <div className={style.mobileTable}>
           <MobileTable
