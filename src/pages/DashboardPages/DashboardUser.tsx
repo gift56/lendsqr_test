@@ -58,7 +58,7 @@ const DashboardUser = () => {
 
   return (
     <div className={style.mainDashboard}>
-      <h2>Dashboard</h2>
+      <h2>Users</h2>
       <div className={style.cardContainer}>
         {cardData.map((item, i) => (
           <Card data={item} key={i} />
