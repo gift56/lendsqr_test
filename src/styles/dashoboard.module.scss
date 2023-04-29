@@ -229,12 +229,37 @@
     }
   }
   .tableCon {
+    width: 100%;
     @include flexbox($direction: column, $align: start, $justify: start);
     gap: 30px;
     .paginate {
       width: 100%;
       @include flexbox($justify: space-between);
       gap: 20px;
+      .showing {
+        @include flexbox($justify: start);
+        gap: 12px;
+        span {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 16px;
+          color: $grayColor;
+        }
+        .filterCon {
+          background: rgba(33, 63, 125, 0.1);
+          border-radius: 4px;
+          @include flexbox;
+          gap: 12px;
+          width: 80px;
+          height: 30px;
+          padding: 0 12px;
+          cursor: pointer;
+          span {
+            font-weight: 500;
+            color: $activeColor;
+          }
+        }
+      }
     }
   }
 }
