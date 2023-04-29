@@ -210,6 +210,12 @@
       display: flex;
     }
   }
+  .mobileTable {
+    width: 100%;
+    @include tab {
+      display: none;
+    }
+  }
   @include tablet {
     padding: 50px 35px;
     gap: 30px;
