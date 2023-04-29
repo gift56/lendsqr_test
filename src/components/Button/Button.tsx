@@ -1,6 +1,6 @@
-import { Button } from "../../utils/types";
+import { ButtonIProp } from "../../utils/types";
 
-const Button = ({ text, disabled, className }: Button) => {
+const Button = ({ text, disabled, className }: ButtonIProp) => {
   return (
     <button disabled={disabled} className={`${className}`}>
       {text}
