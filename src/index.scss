@@ -6,7 +6,12 @@
 
 .sidebar.active {
   background-color: #39cdcd17;
+  transition: all 300ms ease;
+  img {
+    opacity: 1;
+  }
   span {
     color: $activeColor !important;
+    opacity: 1;
   }
 }
