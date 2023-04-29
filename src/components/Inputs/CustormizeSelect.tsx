@@ -27,7 +27,7 @@ const CustormizeSelect = ({
           onChange={onChange}
           onBlur={onBlur}
         />
-        {error && <p className="text-sm mt-1 text-red-600">{error}</p>}
+        {error && <p className="errortxt">{error}</p>}
       </div>
     </div>
   );
