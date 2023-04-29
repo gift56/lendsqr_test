@@ -105,8 +105,11 @@
         cursor: pointer;
         user-select: none;
       }
-      .submitBtn{
-        
+      .submitBtn {
+        width: 100%;
+        background-color: $primary;
+        color: $white;
+        margin-top: 12px;
       }
     }
   }
