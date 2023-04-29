@@ -127,7 +127,7 @@
     .link {
       @include flexbox($justify: start);
       gap: 8px;
-      padding: 12px 12px;
+      padding: 12px 25px;
       cursor: pointer;
       width: 100%;
       &:hover {
