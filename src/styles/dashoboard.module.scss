@@ -130,6 +130,10 @@
   background-color: $white;
   left: -100%;
   transition: all 300ms ease;
+  @include minlaptop {
+    position: relative;
+    left: 0;
+  }
   .link {
     @include flexbox($justify: start);
     gap: 8px;
