@@ -1,4 +1,4 @@
-const UserTable = () => {
+const UserTable = ({ data, columns }: any) => {
   return <div>UserTable</div>;
 };
 
