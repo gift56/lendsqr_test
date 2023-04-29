@@ -4,6 +4,9 @@ const Dashboard = () => {
   return (
     <div className={style.mainDashboard}>
       <h2>Dashboard</h2>
+      <div className={style.cardContainer}>
+        
+      </div>
     </div>
   );
 };
