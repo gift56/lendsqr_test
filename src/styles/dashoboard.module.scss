@@ -212,6 +212,7 @@
       padding: 20px;
       @include flexbox($direction: column, $align: start, $justify: start);
       gap: 15px;
+      cursor: pointer;
       h5 {
         font-weight: 500;
         font-size: 14px;
