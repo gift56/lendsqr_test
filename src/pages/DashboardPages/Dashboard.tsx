@@ -1,4 +1,5 @@
 import { Card } from "../../components";
+import UserTable from "../../components/UserTable/UserTable";
 import style from "../../styles/dashoboard.module.scss";
 import { cardData } from "../../utils/cardData";
 
@@ -12,7 +13,7 @@ const Dashboard = () => {
         ))}
       </div>
       <div className={style.tableCon}>
-        
+        <UserTable />
       </div>
     </div>
   );
