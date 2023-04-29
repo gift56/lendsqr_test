@@ -1,4 +1,6 @@
 import Button from "./Button/Button";
 import CustomizeInput from "./Inputs/CustomizeInput";
+import DashboardSidebar from "./DashboardContents/DashboardSidebar/DashboardSidebar";
+import DashboardHeader from "./DashboardContents/DashboardHeader/DashboardHeader";
 
-export { Button, CustomizeInput };
+export { Button, CustomizeInput, DashboardSidebar, DashboardHeader };
