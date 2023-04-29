@@ -4,7 +4,7 @@
 
 .header {
   width: 100%;
-  padding: 25px 15px;
+  padding: 20px 35px;
   box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
   position: sticky;
   inset: 0;
@@ -54,5 +54,16 @@
   .dropDownArea {
     @include flexbox;
     gap: 26px;
+    a {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      text-decoration: underline;
+      color: $activeColor;
+    }
+    .userDrop {
+      @include flexbox;
+      gap: 12px;
+    }
   }
 }
