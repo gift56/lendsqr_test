@@ -12,16 +12,17 @@ const DashboardSidebar = () => {
           <span>Switch Organization</span>
           <img src={selectIcon} alt="/" />
         </div>
-        <NavLink to="/dashboard" className={`${style.link} sidebar`}>
+        <NavLink to="/dashboard/home" className={`${style.link} sidebar`}>
           <img src={HomeIcon} alt="/" />
           <span>Dashboard</span>
         </NavLink>
       </div>
       <div className={style.links}>
+        <h2>CUSTOMERS</h2>
         {customersLink.map((item, i) => (
           <NavLink to={item.to} key={i} className={`${style.link} sidebar`}>
-            <img src={HomeIcon} alt="/" />
-            <span>Dashboard</span>
+            <img src={item.img} alt="/" />
+            <span>{item.text}</span>
           </NavLink>
         ))}
       </div>

@@ -118,6 +118,8 @@
 // Sidebar Stylings
 .sidebarCon {
   width: 100%;
+  height: 100vh;
+  overflow-y: auto;
   @include flexbox($direction: column, $justify: start, $align: start);
   gap: 12px;
   .link {
@@ -133,6 +135,7 @@
       font-weight: 400;
       font-size: 16px;
       line-height: 19px;
+      color: #21407d85;
     }
   }
   .switchLink {
@@ -144,5 +147,13 @@
     @include flexbox($direction: column, $justify: start, $align: start);
     width: 100%;
     gap: 12px;
+    h2 {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 14px;
+      font-family: $primaryFont;
+      color: $grayColor;
+      padding: 20px 25px 0;
+    }
   }
 }

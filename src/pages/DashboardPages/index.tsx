@@ -4,7 +4,7 @@ import Dashboard from "./Dashboard";
 const index = () => {
   return (
     <Routes>
-      <Route path="/" element={<Dashboard />} />
+      <Route path="/home" element={<Dashboard />} />
     </Routes>
   );
 };
