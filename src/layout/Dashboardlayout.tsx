@@ -1,14 +1,16 @@
 import { DashboardHeader, DashboardSidebar } from "../components";
 import { Outlet } from "react-router-dom";
 import style from "../styles/layout.module.scss";
+import { useState } from "react";
 
 const Dashboardlayout = () => {
+  const [showNav, setShowNav] = useState(false);
   return (
     <main className={style.mainWrapper}>
-      <DashboardHeader />
+      <DashboardHeader setShow={setShowNav} />
       <div className={style.wrapperContent}>
         <div className={style.sidebar}>
-          <DashboardSidebar />
+          <DashboardSidebar show={showNav} setShow={setShowNav} />
         </div>
         <div className={style.outlet}>
           <Outlet />

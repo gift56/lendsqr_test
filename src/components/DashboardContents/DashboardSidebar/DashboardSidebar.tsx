@@ -13,7 +13,7 @@ interface IProp {
   className: any;
 }
 
-const DashboardSidebar = () => {
+const DashboardSidebar = ({ show, setShow }: any) => {
   const ServicesLinks = ({ linkData, text, className }: IProp) => (
     <div className={`${style.links} ${className}`}>
       <h2>{text}</h2>

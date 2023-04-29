@@ -10,7 +10,7 @@ import { CustomizeInput } from "../..";
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 
-const DashboardHeader = () => {
+const DashboardHeader = ({ setShow }: any) => {
   return (
     <header className={style.header}>
       <div className={style.logoArea}>
@@ -37,7 +37,7 @@ const DashboardHeader = () => {
           <img src={dropdownIcon} alt="/" className={style.drop} />
         </div>
       </div>
-      <span className={style.bars}>
+      <span onClick={() => setShow(true)} className={style.bars}>
         <FaBars size={20} color="#213F7D" />
       </span>
     </header>
