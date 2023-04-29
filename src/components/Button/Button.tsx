@@ -6,7 +6,7 @@ const Button = ({ text, disabled, className, type, onClick }: ButtonIProp) => {
       disabled={disabled}
       type={type}
       onClick={onClick}
-      className={`${className}`}
+      className={`${className} `}
     >
       {text}
     </button>
