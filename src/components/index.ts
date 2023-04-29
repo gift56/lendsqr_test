@@ -4,6 +4,8 @@ import DashboardSidebar from "./DashboardContents/DashboardSidebar/DashboardSide
 import DashboardHeader from "./DashboardContents/DashboardHeader/DashboardHeader";
 import Card from "./Card/Card";
 import Pagination from "./Pagination/Pagination";
+import MobileTable from "./UserTable/MobileTable/MobileTable";
+import UserTable from "./UserTable/UserTable";
 
 export {
   Button,
@@ -12,4 +14,6 @@ export {
   DashboardHeader,
   Card,
   Pagination,
+  MobileTable,
+  UserTable
 };

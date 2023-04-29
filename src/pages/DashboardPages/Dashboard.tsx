@@ -1,6 +1,5 @@
 import { useState } from "react";
-import UserTable from "../../components/UserTable/UserTable";
-import { Card, Pagination } from "../../components";
+import { Card, MobileTable, Pagination, UserTable } from "../../components";
 import { selectIcon } from "../../assets";
 import { cardData } from "../../utils/cardData";
 import { tableData, usersColumns } from "../../utils/tableData";
@@ -33,18 +32,6 @@ const Dashboard = () => {
     }
   };
 
-  const statusName = (value: any) => {
-    if (value === "Active") {
-      return "Active";
-    } else if (value === "Inactive") {
-      return "Inactive";
-    } else if (value === "Blacklisted") {
-      return "Blacklisted";
-    } else if (value === "Pending") {
-      return "Pending";
-    }
-  };
-
   const Click = (id: any) => {
     alert(id);
   };
@@ -59,7 +46,7 @@ const Dashboard = () => {
     date: <span className={style.content}>{data.date}</span>,
     status: (
       <p className={`${statusColor(data.status)} ${style.status}`}>
-        {statusName(data.status)}
+        {data.status}
       </p>
     ),
     iconProps: (
@@ -78,7 +65,12 @@ const Dashboard = () => {
         ))}
       </div>
       <div className={style.tableCon}>
-        {/* <UserTable columns={usersColumns} data={activities} /> */}
+        <div className={style.desktopTable}>
+          <UserTable columns={usersColumns} data={activities} />
+        </div>
+        <div className={style.mobileTable}>
+          <MobileTable data={activities} show={false} text="" to="" className="" />
+        </div>
         <div className={style.paginate}>
           <div className={style.showing}>
             <span>Showing</span>
