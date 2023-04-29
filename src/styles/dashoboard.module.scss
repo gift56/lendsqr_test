@@ -11,7 +11,7 @@
   @include flexbox($justify: space-between);
   .logoArea {
     @include flexbox($justify: space-between);
-    width: 40%;
+    width: 50%;
     .logo {
       width: 144px;
       height: 38px;
@@ -23,6 +23,32 @@
     }
     .searchCon {
       @include flexbox;
+      width: 380px;
+      height: 40px;
+      border: 1px solid $activeColor;
+      border-radius: 8px;
+      .input {
+        height: 100%;
+        width: 100%;
+        padding: 0 12px;
+        font-family: $primaryFont;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        color: $grayColor;
+        border-radius: 8px;
+      }
+      span {
+        width: 59px;
+        height: 100%;
+        @include flexbox;
+        background-color: $primary;
+        border: 1px solid $primary;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        transform: scale(1.05);
+        cursor: pointer;
+      }
     }
   }
 }

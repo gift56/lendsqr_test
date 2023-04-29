@@ -1,7 +1,12 @@
 import style from "../../../styles/dashoboard.module.scss";
-import { Logo, UserProfile, dropdownIcon, notifyIcon } from "../../../assets";
+import {
+  Logo,
+  SearchIcon,
+  UserProfile,
+  dropdownIcon,
+  notifyIcon,
+} from "../../../assets";
 import { CustomizeInput } from "../..";
-import { GrSearch } from "react-icons/gr";
 import { Link } from "react-router-dom";
 
 const DashboardHeader = () => {
@@ -12,9 +17,13 @@ const DashboardHeader = () => {
           <img src={Logo} alt="lendsqr_logo" />
         </div>
         <div className={style.searchCon}>
-          <CustomizeInput type="text" placeholder="Search for anything" />
+          <CustomizeInput
+            type="text"
+            placeholder="Search for anything"
+            className={style.input}
+          />
           <span>
-            <GrSearch />
+            <img src={SearchIcon} alt="/" />
           </span>
         </div>
       </div>

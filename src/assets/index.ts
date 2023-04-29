@@ -32,6 +32,7 @@ import card4Icon from "./icons/savingUser.svg";
 import notifyIcon from "./icons/notify.svg";
 import Avatar from "./icons/avatar.svg";
 import BackIcon from "./icons/backarrow.svg";
+import SearchIcon from "./icons/search.svg";
 
 export {
   Logo,
@@ -66,4 +67,5 @@ export {
   ServiceIcon,
   AccountServiceIcon,
   SettlementIcon,
+  SearchIcon,
 };
