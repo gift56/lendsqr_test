@@ -25,14 +25,14 @@ const MobileTable = ({ data, text, show, className, to }: IProp) => {
   return (
     <div className={`${style.table} ${className}`}>
       {show === true && <h2 className={style.h2}>{text}</h2>}
-      <div className="w-full bg-white rounded-lg flex items-start justify-start flex-col shadow-smallShadow border">
+      <div className={style.contentCon}>
         {data.slice(0, 8).map((item: any, i: any) => (
           <Link to={`${to}${item.id}`} key={i} className={style.contentWrapper}>
             <div className={style.contents}>
-              <h2 className={style.content}>{item.userName}</h2>
+              <h2 className={style.content}>{item.username}</h2>
               <p className={style.content}>{item.email}</p>
             </div>
-            <div className={style.contents}>
+            <div className={style.contents2}>
               <p className={style.content}>{item.phone}</p>
               <p className={`${statusColor(item.status)}`}>{item.status}</p>
             </div>
