@@ -114,3 +114,9 @@
     }
   }
 }
+
+// Sidebar Stylings
+.sidebarCon {
+  width: 100%;
+  @include flexbox($direction: column);
+}
