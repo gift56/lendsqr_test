@@ -1,0 +1,15 @@
+@import "./modules/variables";
+@import "./modules/mixin";
+@import "./modules/classes";
+
+.paginationCon {
+  @include flexbox;
+  gap: 16px;
+  .previous {
+    background: rgba(33, 63, 125, 0.1);
+    border-radius: 4px;
+    width: 24px;
+    height: 24px;
+    @include flexbox;
+  }
+}

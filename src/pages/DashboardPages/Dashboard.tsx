@@ -85,7 +85,10 @@ const Dashboard = () => {
             <span>out of 100</span>
           </div>
           <div>
-            <Pagination />
+            <Pagination
+              pageCount={pageCount}
+              handlePageClick={handlePageClick}
+            />
           </div>
         </div>
       </div>
