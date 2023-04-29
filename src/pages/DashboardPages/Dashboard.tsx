@@ -50,16 +50,20 @@ const Dashboard = () => {
   };
 
   const activities = currentData.map((data: any, i: any) => ({
-    organization: <span>{data.organizationName}</span>,
-    username: <span>{data.userName}</span>,
-    email: <span>{data.email}</span>,
-    phone: <span>{data.phone}</span>,
-    date: <span>{data.date}</span>,
+    organization: (
+      <span className={style.content}>{data.organizationName}</span>
+    ),
+    username: <span className={style.content}>{data.userName}</span>,
+    email: <span className={style.content}>{data.email}</span>,
+    phone: <span className={style.content}>{data.phone}</span>,
+    date: <span className={style.content}>{data.date}</span>,
     status: (
-      <p className={`${statusColor(data.status)}`}>{statusName(data.status)}</p>
+      <p className={`${statusColor(data.status)} ${style.status}`}>
+        {statusName(data.status)}
+      </p>
     ),
     iconProps: (
-      <div className={style.icon} onClick={() => Click(i)}>
+      <div className={style.content} onClick={() => Click(i)}>
         <BsThreeDotsVertical />
       </div>
     ),
@@ -74,7 +78,7 @@ const Dashboard = () => {
         ))}
       </div>
       <div className={style.tableCon}>
-        <UserTable columns={usersColumns} data={activities} />
+        {/* <UserTable columns={usersColumns} data={activities} /> */}
         <div className={style.paginate}>
           <div className={style.showing}>
             <span>Showing</span>

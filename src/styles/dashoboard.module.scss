@@ -184,19 +184,19 @@
 
 // Dashboard Page
 .active {
-  background-color: #39cd6381;
+  background-color: #39cd632d;
   color: $success;
 }
 .blacklist {
-  background-color: #e4033b81;
+  background-color: #e4033b23;
   color: $danger;
 }
 .inactive {
-  background-color: #545f7d8a;
+  background-color: #545f7d21;
   color: $grayColor;
 }
 .pendeing {
-  background-color: #e9b30081;
+  background-color: #e9b3002f;
   color: $warning;
 }
 .mainDashboard {
@@ -250,7 +250,10 @@
     gap: 30px;
     .paginate {
       width: 100%;
-      @include flexbox($justify: space-between);
+      @include tab {
+        @include flexbox($direction: row, $justify: space-between);
+      }
+      @include flexbox($direction: column, $justify: center);
       gap: 20px;
       padding-bottom: 10vh;
       .showing {
@@ -277,6 +280,24 @@
           }
         }
       }
+    }
+    .status {
+      width: fit-content;
+      padding: 8px 20px;
+      @include flexbox;
+      border-radius: 100px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+    }
+    .content {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      color: $grayColor;
+      cursor: pointer;
+      margin: 0 10px;
+      text-align: left;
     }
   }
 }

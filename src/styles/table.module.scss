@@ -29,8 +29,13 @@
     }
   }
   tbody {
-    tr {
+    .td {
       border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+      height: 40px;
+      
+      &:last-child {
+        border-bottom: none;
+      }
     }
   }
 }
