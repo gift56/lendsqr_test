@@ -5,6 +5,7 @@
 .header {
   width: 100%;
   padding: 20px 12px;
+  @include flexbox;
   @include phone {
     padding: 20px 35px;
   }
@@ -104,6 +105,12 @@
         line-height: 19px;
         color: $activeColor;
       }
+    }
+  }
+  .bars {
+    margin-left: 12px;
+    @include minlaptop {
+      display: none;
     }
   }
 }
