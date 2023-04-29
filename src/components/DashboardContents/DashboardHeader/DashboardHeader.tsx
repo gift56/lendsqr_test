@@ -22,9 +22,9 @@ const DashboardHeader = () => {
         <Link to="/dashboard">Docs</Link>
         <img src={notifyIcon} alt="/" />
         <div className={style.userDrop}>
-          <img src={UserProfile} alt="profile_imgae" />
+          <img src={UserProfile} alt="profile_image" className={style.user} />
           <span>Adedeji</span>
-          <img src={dropdownIcon} alt="/" />
+          <img src={dropdownIcon} alt="/" className={style.drop} />
         </div>
       </div>
     </header>
