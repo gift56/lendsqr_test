@@ -5,6 +5,7 @@
   outline: none;
   text-decoration: none;
   list-style: none;
+  border: none;
 }
 
 h1,
@@ -19,7 +20,7 @@ body {
   width: 4px;
 }
 ::-webkit-scrollbar-thumb {
-   background-color:#c4c4c4;
+  background-color: #c4c4c4;
 }
 ::-webkit-scrollbar-track {
   background-color: transparent;

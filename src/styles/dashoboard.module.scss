@@ -21,5 +21,8 @@
         object-fit: contain;
       }
     }
+    .searchCon {
+      @include flexbox;
+    }
   }
 }
