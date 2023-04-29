@@ -183,6 +183,10 @@
 }
 
 // Dashboard Page
+.active{
+  background-color: #39cd6381;
+  color: $success;
+}
 .mainDashboard {
   width: 100%;
   padding: 50px 35px;

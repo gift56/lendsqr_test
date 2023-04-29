@@ -5,6 +5,14 @@ import style from "../../styles/dashoboard.module.scss";
 import { cardData } from "../../utils/cardData";
 
 const Dashboard = () => {
+  const statusColor = (value: any) => {
+    if (value === "ACTIVE") {
+      return style.active;
+    } else if (value === "INACTIVE") {
+      return "text-[#ED2121]";
+    }
+  };
+
   return (
     <div className={style.mainDashboard}>
       <h2>Dashboard</h2>
