@@ -1,16 +1,21 @@
 import { BriefCaseIcon, HomeIcon, selectIcon } from "../../../assets";
 import style from "../../../styles/dashoboard.module.scss";
 import { NavLink } from "react-router-dom";
-import { businessLink, customersLink } from "../../../utils/sidebarLinks";
+import {
+  businessLink,
+  customersLink,
+  settingsLink,
+} from "../../../utils/sidebarLinks";
 
 interface IProp {
   linkData: any;
   text: string;
+  className: any;
 }
 
 const DashboardSidebar = () => {
-  const ServicesLinks = ({ linkData, text }: IProp) => (
-    <div className={style.links}>
+  const ServicesLinks = ({ linkData, text, className }: IProp) => (
+    <div className={`${style.links} ${className}`}>
       <h2>{text}</h2>
       {linkData.map((item: any, i: any) => (
         <NavLink to={item.to} key={i} className={`${style.link} sidebar`}>
@@ -34,8 +39,13 @@ const DashboardSidebar = () => {
           <span>Dashboard</span>
         </NavLink>
       </div>
-      <ServicesLinks linkData={customersLink} text="CUSTOMERS" />
-      <ServicesLinks linkData={businessLink} text="BUSINESSES" />
+      <ServicesLinks linkData={customersLink} text="CUSTOMERS" className="" />
+      <ServicesLinks linkData={businessLink} text="BUSINESSES" className="" />
+      <ServicesLinks
+        linkData={settingsLink}
+        text="SETTINGS"
+        className={style.settings}
+      />
     </div>
   );
 };

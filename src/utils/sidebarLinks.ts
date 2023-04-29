@@ -1,11 +1,14 @@
 import {
   AccountServiceIcon,
+  AuditIcon,
   BriefCaseIcon,
   DecisionIcon,
   FeesIcon,
   GuarntorIcon,
   KarmaIcon,
   LoanIcon,
+  PerformanceIcon,
+  PricingIcon,
   ProductSavingIcon,
   ReportsIcon,
   RequestIcon,
@@ -104,5 +107,23 @@ export const businessLink = [
     to: "/dashboard/reports",
     img: ReportsIcon,
     text: "Reports",
+  },
+];
+
+export const settingsLink = [
+  {
+    to: "/dashboard/preferences",
+    img: PerformanceIcon,
+    text: "Preferences",
+  },
+  {
+    to: "/dashboard/pricings",
+    img: PricingIcon,
+    text: "Fees and Pricing",
+  },
+  {
+    to: "/dashboard/audit",
+    img: AuditIcon,
+    text: "Audit Logs",
   },
 ];
