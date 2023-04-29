@@ -1,7 +1,7 @@
 import { BriefCaseIcon, HomeIcon, selectIcon } from "../../../assets";
 import style from "../../../styles/dashoboard.module.scss";
 import { NavLink } from "react-router-dom";
-import { customersLink } from "../../../utils/sidebarLinks";
+import { businessLink, customersLink } from "../../../utils/sidebarLinks";
 
 interface IProp {
   linkData: any;
@@ -35,6 +35,7 @@ const DashboardSidebar = () => {
         </NavLink>
       </div>
       <ServicesLinks linkData={customersLink} text="CUSTOMERS" />
+      <ServicesLinks linkData={businessLink} text="BUSINESSES" />
     </div>
   );
 };
