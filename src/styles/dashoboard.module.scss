@@ -231,5 +231,10 @@
   .tableCon {
     @include flexbox($direction: column, $align: start, $justify: start);
     gap: 30px;
+    .paginate {
+      width: 100%;
+      @include flexbox($justify: space-between);
+      gap: 20px;
+    }
   }
 }
