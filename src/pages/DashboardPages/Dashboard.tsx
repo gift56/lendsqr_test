@@ -3,6 +3,7 @@ import { Card, Pagination } from "../../components";
 import UserTable from "../../components/UserTable/UserTable";
 import style from "../../styles/dashoboard.module.scss";
 import { cardData } from "../../utils/cardData";
+import { usersColumns } from "../../utils/tableData";
 
 const Dashboard = () => {
   const statusColor = (value: any) => {
@@ -42,7 +43,7 @@ const Dashboard = () => {
         ))}
       </div>
       <div className={style.tableCon}>
-        <UserTable />
+        <UserTable columns={usersColumns} />
         <div className={style.paginate}>
           <div className={style.showing}>
             <span>Showing</span>

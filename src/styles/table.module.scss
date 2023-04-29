@@ -1,0 +1,18 @@
+@import "./modules/variables";
+@import "./modules/mixin";
+@import "./modules/classes";
+
+.table {
+  width: 100%;
+  background-color: $white;
+  padding: 12px;
+  overflow-x: auto;
+  height: 540px;
+  thead {
+    tr {
+      .thCon {
+        text-align: left;
+      }
+    }
+  }
+}

@@ -252,6 +252,7 @@
       width: 100%;
       @include flexbox($justify: space-between);
       gap: 20px;
+      padding-bottom: 10vh;
       .showing {
         @include flexbox($justify: start);
         gap: 12px;

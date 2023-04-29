@@ -33,6 +33,7 @@ import notifyIcon from "./icons/notify.png";
 import Avatar from "./icons/avatar.svg";
 import BackIcon from "./icons/backarrow.svg";
 import SearchIcon from "./icons/search.svg";
+import FilterIcon from "./icons/filter.svg";
 
 export {
   Logo,
@@ -68,4 +69,5 @@ export {
   AccountServiceIcon,
   SettlementIcon,
   SearchIcon,
+  FilterIcon,
 };
