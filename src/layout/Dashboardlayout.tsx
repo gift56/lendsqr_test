@@ -1,7 +1,9 @@
-const Dashboardlayout = () => {
-  return (
-    <div>Dashboardlayout</div>
-  )
-}
+import style from "../styles/layout.module.scss";
 
-export default Dashboardlayout
+const Dashboardlayout = () => {
+  return <main className={style.mainWrapper}>
+    h
+  </main>;
+};
+
+export default Dashboardlayout;

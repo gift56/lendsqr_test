@@ -1,0 +1,12 @@
+@import "./modules/variables";
+@import "./modules/mixin";
+@import "./modules/classes";
+
+.mainWrapper {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  @include flexbox($direction: column, $align: start, $justify: start);
+}
