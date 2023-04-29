@@ -118,5 +118,26 @@
 // Sidebar Stylings
 .sidebarCon {
   width: 100%;
-  @include flexbox($direction: column);
+  @include flexbox($direction: column, $justify: start, $align: start);
+  gap: 12px;
+  .switchLink {
+    @include flexbox($direction: column, $justify: start, $align: start);
+    width: 100%;
+    gap: 12px;
+    .link {
+      @include flexbox($justify: start);
+      gap: 8px;
+      padding: 12px 12px;
+      cursor: pointer;
+      width: 100%;
+      &:hover {
+        background-color: #39cdcd17;
+      }
+      span {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+      }
+    }
+  }
 }

@@ -3,3 +3,7 @@
 @import "./styles/modules/reset";
 @import "./styles/modules/mixin";
 @import "./styles/modules/classes";
+
+.sidebar.active {
+  background-color: #39cdcd17 !important;
+}
