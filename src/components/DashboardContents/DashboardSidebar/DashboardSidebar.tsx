@@ -1,6 +1,7 @@
 import { BriefCaseIcon, HomeIcon, selectIcon } from "../../../assets";
 import style from "../../../styles/dashoboard.module.scss";
 import { NavLink } from "react-router-dom";
+import { customersLink } from "../../../utils/sidebarLinks";
 
 const DashboardSidebar = () => {
   return (
@@ -15,6 +16,14 @@ const DashboardSidebar = () => {
           <img src={HomeIcon} alt="/" />
           <span>Dashboard</span>
         </NavLink>
+      </div>
+      <div className={style.links}>
+        {customersLink.map((item, i) => (
+          <NavLink to={item.to} key={i} className={`${style.link} sidebar`}>
+            <img src={HomeIcon} alt="/" />
+            <span>Dashboard</span>
+          </NavLink>
+        ))}
       </div>
     </div>
   );
