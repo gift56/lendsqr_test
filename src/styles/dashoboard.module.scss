@@ -1,4 +1,6 @@
-
+@import "./modules/variables";
+@import "./modules/mixin";
+@import "./modules/classes";
 
 .header {
   width: 100%;
@@ -6,4 +8,5 @@
   box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
   position: sticky;
   inset: 0;
+  @include flexbox($justify: space-between);
 }
