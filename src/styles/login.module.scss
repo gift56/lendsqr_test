@@ -45,9 +45,10 @@
     height: 100%;
     padding: 30px;
     @include flexbox($direction: column, $align: start);
-    gap: 20px;
+    gap: 24px;
     .welcomeText {
       @include flexbox($direction: column, $align: start);
+      margin-bottom: 20px;
       h1 {
         color: $activeColor;
         font-weight: 700;
@@ -64,7 +65,7 @@
     form {
       width: 80%;
       @include flexbox($direction: column, $align: start);
-      gap: 12px;
+      gap: 20px;
       .showPassword {
         position: relative;
         width: 100%;
