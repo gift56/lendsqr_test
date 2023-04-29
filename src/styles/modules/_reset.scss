@@ -15,3 +15,12 @@ p {
 body {
   font-family: $primaryFont;
 }
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-thumb {
+   background-color:#c4c4c4;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
