@@ -3,13 +3,25 @@ import styles from "../styles/login.module.scss";
 import { LoginImg, Logo } from "../assets";
 import { Button, CustomizeInput } from "../components";
 import { useFormik } from "formik";
+import { loginSchema } from "../schema";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
+  const initialValues = {
+    email: "",
+    password: "",
+  };
+
+  const onSubmit = async (payload: any, actions: any) => {
+    console.log(payload);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    actions.resetForm();
+  };
+
   const {} = useFormik({
     initialValues,
-    validationSchema,
+    validationSchema: loginSchema,
     onSubmit,
   });
 
