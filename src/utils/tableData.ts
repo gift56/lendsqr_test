@@ -5,5 +5,16 @@ export const usersColumns = [
   { field: "phone", header: "Phone number" },
   { field: "date", header: "Date joined" },
   { field: "status", header: "Status" },
-  { field: "", header: "" },
+  { field: "iconProps", header: "" },
+];
+
+export const tableData = [
+  {
+    organizationName: "Lendsqr",
+    userName: "Adedeji",
+    email: "adedeji@lendsqr.com",
+    phone: "08078903721",
+    date: "May 15, 2020 10:00 AM",
+    status: "Inactive",
+  },
 ];
