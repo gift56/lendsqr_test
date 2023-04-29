@@ -17,6 +17,21 @@ const UserTable = ({ data, columns, tableClassName, trClassName }: any) => {
             ))}
         </tr>
       </thead>
+      <tbody className="w-full">
+        {data &&
+          data.map((row: any, i: any) => (
+            <tr
+              key={i}
+              className={`h-[50px] text-sm leading-5 w-full even:bg-[#f4f4f4] ${containerClassName}`}
+            >
+              {(columns as unknown as [])?.map((col: any, i: any) => (
+                <td key={i} className={style.td}>
+                  {row[col.field]}
+                </td>
+              ))}
+            </tr>
+          ))}
+      </tbody>
     </table>
   );
 };
