@@ -1,12 +1,18 @@
 import {
+  AccountServiceIcon,
   BriefCaseIcon,
   DecisionIcon,
+  FeesIcon,
   GuarntorIcon,
   KarmaIcon,
   LoanIcon,
   ProductSavingIcon,
+  ReportsIcon,
   RequestIcon,
   SavingsIcon,
+  ServiceIcon,
+  SettlementIcon,
+  TransactionIcon,
   UsersIcon,
   WaitliastIcon,
 } from "../assets";
@@ -68,5 +74,35 @@ export const businessLink = [
     to: "/dashboard/loan-product",
     img: ProductSavingIcon,
     text: "Savings Products",
+  },
+  {
+    to: "/dashboard/fees-charges",
+    img: FeesIcon,
+    text: "Fees and Charges",
+  },
+  {
+    to: "/dashboard/transaction",
+    img: TransactionIcon,
+    text: "Transactions",
+  },
+  {
+    to: "/dashboard/service",
+    img: ServiceIcon,
+    text: "Services",
+  },
+  {
+    to: "/dashboard/service-account",
+    img: AccountServiceIcon,
+    text: "Service Account",
+  },
+  {
+    to: "/dashboard/settlements",
+    img: SettlementIcon,
+    text: "Settlements",
+  },
+  {
+    to: "/dashboard/reports",
+    img: ReportsIcon,
+    text: "Reports",
   },
 ];
