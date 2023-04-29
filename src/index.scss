@@ -5,5 +5,8 @@
 @import "./styles/modules/classes";
 
 .sidebar.active {
-  background-color: #39cdcd17 !important;
+  background-color: #39cdcd17;
+  span {
+    color: $activeColor !important;
+  }
 }
