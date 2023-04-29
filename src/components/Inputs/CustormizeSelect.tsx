@@ -5,6 +5,7 @@ const CustormizeSelect = ({
   label,
   className,
   labelClassName,
+  containerClass,
   error,
   onChange,
   onBlur,
@@ -12,23 +13,23 @@ const CustormizeSelect = ({
   ...props
 }: any) => {
   return (
-    <>
+    <div className={`customizeInputCon ${containerClass}`}>
       {showLabel === false ? (
         <label htmlFor={htmlFor} className={labelClassName}>
           {label}
         </label>
       ) : null}
-      <div className={`flex flex-col gap-1 w-full ${inpuClassName}`}>
+      <div className={`${inpuClassName} selectCon`}>
         <select
           {...props}
-          className={`${className} ${error ? "border border-red-400" : ""}`}
+          className={`${className} ${error ? "error" : ""}`}
           id={id}
           onChange={onChange}
           onBlur={onBlur}
         />
         {error && <p className="text-sm mt-1 text-red-600">{error}</p>}
       </div>
-    </>
+    </div>
   );
 };
 

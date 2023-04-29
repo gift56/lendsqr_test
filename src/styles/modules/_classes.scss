@@ -32,7 +32,8 @@ img {
     font-size: 14px;
   }
 }
-.customizeInputCon {
+.customizeInputCon,
+.selectCon {
   @include flexbox($direction: column, $align: start, $justify: start);
   gap: 4px;
   width: 100%;
