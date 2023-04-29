@@ -64,6 +64,16 @@
     .userDrop {
       @include flexbox;
       gap: 12px;
+      cursor: pointer;
+      .user {
+        border-radius: 50%;
+      }
+      span {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        color: $activeColor;
+      }
     }
   }
 }
