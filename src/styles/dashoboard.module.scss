@@ -116,10 +116,20 @@
 }
 
 // Sidebar Stylings
+
+.show {
+  left: 0 !important;
+}
+
 .sidebarCon {
   width: 100%;
   @include flexbox($direction: column, $justify: start, $align: start);
   gap: 12px;
+  position: absolute;
+  top: 0;
+  background-color: $white;
+  left: -100%;
+  transition: all 300ms ease;
   .link {
     @include flexbox($justify: start);
     gap: 8px;

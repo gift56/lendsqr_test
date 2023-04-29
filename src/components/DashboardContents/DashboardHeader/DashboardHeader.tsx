@@ -8,9 +8,9 @@ import {
 } from "../../../assets";
 import { CustomizeInput } from "../..";
 import { Link } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 
-const DashboardHeader = ({ setShow }: any) => {
+const DashboardHeader = ({ show, setShow }: any) => {
   return (
     <header className={style.header}>
       <div className={style.logoArea}>
@@ -37,8 +37,15 @@ const DashboardHeader = ({ setShow }: any) => {
           <img src={dropdownIcon} alt="/" className={style.drop} />
         </div>
       </div>
-      <span onClick={() => setShow(true)} className={style.bars}>
-        <FaBars size={20} color="#213F7D" />
+      <span
+        onClick={() => setShow((prev: any) => !prev)}
+        className={style.bars}
+      >
+        {show ? (
+          <FaTimes size={20} color="#213F7D" />
+        ) : (
+          <FaBars size={20} color="#213F7D" />
+        )}
       </span>
     </header>
   );

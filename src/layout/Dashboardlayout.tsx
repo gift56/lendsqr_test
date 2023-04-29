@@ -7,7 +7,7 @@ const Dashboardlayout = () => {
   const [showNav, setShowNav] = useState(false);
   return (
     <main className={style.mainWrapper}>
-      <DashboardHeader setShow={setShowNav} />
+      <DashboardHeader show={showNav} setShow={setShowNav} />
       <div className={style.wrapperContent}>
         <div className={style.sidebar}>
           <DashboardSidebar show={showNav} setShow={setShowNav} />
