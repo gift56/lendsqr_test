@@ -6,11 +6,31 @@ import { cardData } from "../../utils/cardData";
 
 const Dashboard = () => {
   const statusColor = (value: any) => {
-    if (value === "ACTIVE") {
+    if (value === "Active") {
       return style.active;
-    } else if (value === "INACTIVE") {
-      return "text-[#ED2121]";
+    } else if (value === "Inactive") {
+      return style.inactive;
+    } else if (value === "Blacklisted") {
+      return style.blacklist;
+    } else if (value === "Pending") {
+      return style.pendeing;
     }
+  };
+
+  const statusName = (value: any) => {
+    if (value === "Active") {
+      return "Active";
+    } else if (value === "Inactive") {
+      return "Inactive";
+    } else if (value === "Blacklisted") {
+      return "Blacklisted";
+    } else if (value === "Pending") {
+      return "Pending";
+    }
+  };
+
+  const Click = (id: any) => {
+    alert(id);
   };
 
   return (

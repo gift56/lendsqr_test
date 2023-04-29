@@ -183,9 +183,21 @@
 }
 
 // Dashboard Page
-.active{
+.active {
   background-color: #39cd6381;
   color: $success;
+}
+.blacklist {
+  background-color: #e4033b81;
+  color: $danger;
+}
+.inactive {
+  background-color: #545f7d8a;
+  color: $grayColor;
+}
+.pendeing {
+  background-color: #e9b30081;
+  color: $warning;
 }
 .mainDashboard {
   width: 100%;
