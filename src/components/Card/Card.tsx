@@ -1,4 +1,4 @@
-const Card = ({ data }) => {
+const Card = ({ data }: any) => {
   return <div>Card</div>;
 };
 
