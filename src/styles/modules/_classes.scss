@@ -3,4 +3,6 @@
   padding: 20px 0;
   @include flexbox;
   transition: all 300ms ease;
+  font-weight: 600;
+  font-size: 14px;
 }
