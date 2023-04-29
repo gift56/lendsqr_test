@@ -1,7 +1,7 @@
 export interface ButtonIProp {
   text: any;
   disabled: boolean;
-  className: string;
+  className: any;
   type: any;
   onClick: any;
 }

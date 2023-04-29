@@ -93,17 +93,20 @@
         .customizeInput {
           height: 100%;
         }
-        p {
-          font-weight: 600;
-          font-size: 12px;
-          line-height: 16px;
-          text-align: center;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
-          color: $primary;
-          cursor: pointer;
-          user-select: none;
-        }
+      }
+      p {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+        text-align: center;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $primary;
+        cursor: pointer;
+        user-select: none;
+      }
+      .submitBtn{
+        
       }
     }
   }

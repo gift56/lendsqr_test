@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "../styles/login.module.scss";
 import { LoginImg, Logo } from "../assets";
-import { CustomizeInput } from "../components";
+import { Button, CustomizeInput } from "../components";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -49,6 +49,14 @@ const Login = () => {
             />
             <p onClick={() => setShowPassword((prev) => !prev)}>Show</p>
           </div>
+          <p>Forgot PASSWORD?</p>
+          <Button
+            type="submit"
+            disabled={true}
+            onClick={() => {}}
+            text="LOG IN"
+            className={styles.submitBtn}
+          />
         </form>
       </div>
     </div>
