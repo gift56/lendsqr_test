@@ -534,10 +534,25 @@
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         gap: 18px;
         width: 100%;
+        border-bottom: 1px solid #21407d3a;
+        padding-bottom: 18px;
         .data {
           width: 100%;
           @include flexbox($direction: column, $align: start, $justify: start);
-          gap: 10px;
+          gap: 8px;
+          h5 {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+            text-transform: uppercase;
+            color: #545f7dd0;
+          }
+          h3 {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+            color: $grayColor;
+          }
         }
       }
     }
