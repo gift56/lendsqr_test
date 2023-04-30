@@ -518,6 +518,7 @@
     border-radius: 4px;
     width: 100%;
     padding: 25px 40px;
+    margin-bottom: 10vh;
     .personsDetail {
       @include flexbox($direction: column, $align: start, $justify: start);
       width: 100%;
@@ -527,6 +528,12 @@
         font-size: 16px;
         line-height: 19px;
         color: $activeColor;
+      }
+      .dataContent {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 12px;
+        width: 100%;
       }
     }
   }
