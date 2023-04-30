@@ -35,34 +35,30 @@ export const personData = [
 export const educationData = [
   {
     title: "level of education",
-    content: "Grace Effiom",
+    content: "B.Sc",
   },
   {
-    title: "Phone Number",
-    content: "07060780922",
+    title: "employment status",
+    content: "Employed",
   },
   {
-    title: "Email Address",
-    content: "grace@gmail.com",
+    title: "sector of employment",
+    content: "FinTech",
   },
   {
-    title: "Bvn",
-    content: "07060780922",
+    title: "Duration of employment",
+    content: "2 years",
   },
   {
-    title: "Gender",
-    content: "Female",
+    title: "office email",
+    content: "grace@lendsqr.com",
   },
   {
-    title: "Marital status",
-    content: "Single",
+    title: "Monthly income",
+    content: "₦200,000.00- ₦400,000.00",
   },
   {
-    title: "Children",
-    content: "None",
-  },
-  {
-    title: "Type of residence",
-    content: "Parent’s Apartment",
+    title: "loan repayment",
+    content: "40,000",
   },
 ];

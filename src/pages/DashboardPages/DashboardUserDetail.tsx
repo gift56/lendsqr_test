@@ -6,7 +6,7 @@ import { Button } from "../../components";
 import { tableData } from "../../utils/tableData";
 import { IoStar } from "react-icons/io5";
 import { IoIosStarOutline } from "react-icons/io";
-import { personData } from "../../utils/userData";
+import { educationData, personData } from "../../utils/userData";
 
 const DashboardUserDetail = () => {
   const { id } = useParams();
@@ -121,8 +121,8 @@ const DashboardUserDetail = () => {
         </div>
         <div className={style.personsDetail}>
           <h3>Education and Employment</h3>
-          <div className={style.dataContent}>
-            {personData.map((item: any, i: any) => (
+          <div className={`${style.dataContent} col-4`}>
+            {educationData.map((item: any, i: any) => (
               <div key={i} className={style.data}>
                 <h5>{item.title}</h5>
                 <h3>{item.content}</h3>
