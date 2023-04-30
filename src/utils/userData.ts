@@ -62,3 +62,35 @@ export const educationData = [
     content: "40,000",
   },
 ];
+export const socialData = [
+  {
+    title: "Twitter",
+    content: "@grace_effiom",
+  },
+  {
+    title: "Facebook",
+    content: "Grace Effiom",
+  },
+  {
+    title: "Instagram",
+    content: "@grace_effiom",
+  },
+];
+export const gurantorData = [
+  {
+    title: "full Name",
+    content: "Grace Effiom",
+  },
+  {
+    title: "Phone Number",
+    content: "07060780922",
+  },
+  {
+    title: "Email Address",
+    content: "grace@gmail.com",
+  },
+  {
+    title: "Relationship",
+    content: "Sister",
+  },
+];

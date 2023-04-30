@@ -6,7 +6,12 @@ import { Button } from "../../components";
 import { tableData } from "../../utils/tableData";
 import { IoStar } from "react-icons/io5";
 import { IoIosStarOutline } from "react-icons/io";
-import { educationData, personData } from "../../utils/userData";
+import {
+  educationData,
+  gurantorData,
+  personData,
+  socialData,
+} from "../../utils/userData";
 
 const DashboardUserDetail = () => {
   const { id } = useParams();
@@ -133,7 +138,7 @@ const DashboardUserDetail = () => {
         <div className={style.personsDetail}>
           <h3>Socials</h3>
           <div className={style.dataContent}>
-            {personData.map((item: any, i: any) => (
+            {socialData.map((item: any, i: any) => (
               <div key={i} className={style.data}>
                 <h5>{item.title}</h5>
                 <h3>{item.content}</h3>
@@ -144,7 +149,7 @@ const DashboardUserDetail = () => {
         <div className={style.personsDetail}>
           <h3>Guarantor</h3>
           <div className={style.dataContent}>
-            {personData.map((item: any, i: any) => (
+            {gurantorData.map((item: any, i: any) => (
               <div key={i} className={style.data}>
                 <h5>{item.title}</h5>
                 <h3>{item.content}</h3>
