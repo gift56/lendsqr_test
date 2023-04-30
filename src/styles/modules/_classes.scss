@@ -74,4 +74,8 @@ img {
 .loadingCon {
   @include flexbox;
   width: 100%;
+  img {
+    width: 50px;
+    height: 50px;
+  }
 }
