@@ -7,6 +7,33 @@ import { Button } from "../../components";
 const DashboardUserDetail = () => {
   const [tab, setTab] = useState("General");
 
+  const tabsItem = [
+    {
+      tabs: "General",
+      text: "General Details",
+    },
+    {
+      tabs: "Documents",
+      text: "Documents",
+    },
+    {
+      tabs: "Bank",
+      text: "Bank Details",
+    },
+    {
+      tabs: "Loans",
+      text: "Loans",
+    },
+    {
+      tabs: "Savings",
+      text: "Savings",
+    },
+    {
+      tabs: "App",
+      text: "App and System",
+    },
+  ];
+
   return (
     <div className={style.mainDashboard}>
       <Link to="/dashboard/users" className={style.back}>
@@ -31,6 +58,10 @@ const DashboardUserDetail = () => {
             onClick={() => {}}
           />
         </div>
+      </div>
+      <div className={style.profileDetails}>
+        <div></div>
+        <div></div>
       </div>
     </div>
   );
