@@ -87,8 +87,16 @@ const DashboardUserDetail = () => {
               </span>
             </div>
           </div>
+          <div className={style.amt}>
+            <h2>₦200,000.00</h2>
+            <p>9912345678/Providus Bank</p>
+          </div>
         </div>
-        <div className={style.tabCon}></div>
+        <div className={style.tabCon}>
+          {tabsItem.map((item: any, i: any) => (
+            <div></div>
+          ))}
+        </div>
       </div>
     </div>
   );
