@@ -5,12 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import { Button } from "../../components";
 import { IoStar } from "react-icons/io5";
 import { IoIosStarOutline } from "react-icons/io";
-import {
-  educationData,
-  gurantorData,
-  personData,
-  socialData,
-} from "../../utils/userData";
+import { educationData, gurantorData, socialData } from "../../utils/userData";
 import useUserStore from "../../store";
 import { User } from "../../utils/types";
 
@@ -76,7 +71,10 @@ const DashboardUserDetail = () => {
       <div className={style.profileDetails}>
         <div className={style.topSide}>
           <div className={style.profile}>
-            <img src={Avatar} alt="user_prifile" />
+            <img
+              src={data.profile.avatar ? data.profile.avatar : Avatar}
+              alt="user_prifile"
+            />
             <div>
               <h2>{data.userName}</h2>
               <p>{data.accountNumber}</p>
@@ -98,7 +96,9 @@ const DashboardUserDetail = () => {
           </div>
           <div className={style.amt}>
             <h2>{data.accountBalance}</h2>
-            <p>{data?.phoneNumber}/{data.orgName}</p>
+            <p>
+              {data.profile.bvn}/{data.orgName}
+            </p>
           </div>
         </div>
         <div className={style.tabCon}>
@@ -119,12 +119,40 @@ const DashboardUserDetail = () => {
         <div className={style.personsDetail}>
           <h3>Personal Information</h3>
           <div className={style.dataContent}>
-            {personData.map((item: any, i: any) => (
-              <div key={i} className={style.data}>
-                <h5>{item.title}</h5>
-                <h3>{item.content}</h3>
-              </div>
-            ))}
+            <div className={style.data}>
+              <h5>full Name</h5>
+              <h3>
+                {data.profile.firstName} {data.profile.lastName}
+              </h3>
+            </div>
+            <div className={style.data}>
+              <h5>Phone Number</h5>
+              <h3>{data.profile.phoneNumber}</h3>
+            </div>
+            <div className={style.data}>
+              <h5>Email Address</h5>
+              <h3>{data.email}</h3>
+            </div>
+            <div className={style.data}>
+              <h5>Bvn</h5>
+              <h3>{data.profile.bvn}</h3>
+            </div>
+            <div className={style.data}>
+              <h5>Gender</h5>
+              <h3>{data.profile.gender}</h3>
+            </div>
+            <div className={style.data}>
+              <h5>Martial status</h5>
+              <h3>Single</h3>
+            </div>
+            <div className={style.data}>
+              <h5>Children</h5>
+              <h3>None</h3>
+            </div>
+            <div className={style.data}>
+              <h5>Type of residence</h5>
+              <h3>{data.profile.address}</h3>
+            </div>
           </div>
         </div>
         <div className={style.personsDetail}>
