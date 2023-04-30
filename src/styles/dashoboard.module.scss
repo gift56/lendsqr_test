@@ -431,8 +431,9 @@
     @include flexbox($justify: space-between);
     width: 100%;
     .profile {
-      @include flexbox;
+      @include flexbox($justify: start);
       gap: 16px;
+      flex: 1;
       img {
         width: 100px;
         height: 100px;
@@ -441,7 +442,7 @@
       }
       div {
         @include flexbox($direction: column, $align: start);
-        gap: 6px;
+        gap: 10px;
         p {
           font-weight: 400;
           font-size: 14px;
@@ -452,7 +453,7 @@
     }
     .tiers {
       @include flexbox($direction: column, $align: start);
-      gap: 12px;
+      gap: 17px;
       border-left: 1px solid #545f7d25;
       border-right: 1px solid #545f7d25;
       height: 100%;
@@ -463,8 +464,24 @@
         line-height: 16px;
         color: $grayColor;
       }
-      .stars{
-        
+      .stars {
+        @include flexbox;
+        gap: 6px;
+        .fill {
+          color: $warning;
+        }
+      }
+    }
+    .amt {
+      @include flexbox($justify: start, $direction: column, $align: start);
+      flex: 2;
+      padding: 0 30px;
+      gap: 10px;
+      p {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        color: $grayColor;
       }
     }
   }
