@@ -513,17 +513,19 @@
       gap: 10px;
       .singleTab {
         font-weight: 400;
-        font-size: 16px;
+        font-size: 14px;
+        @include phone {
+          width: 25%;
+          font-size: 16px;
+        }
         line-height: 19px;
         text-align: center;
         color: rgba(0, 0, 0, 0.8);
         cursor: pointer;
-
         @include minlaptop {
           height: 25px;
           width: 50%;
         }
-        width: 25%;
       }
       .activeTab {
         border-bottom: 2px solid $primary;
