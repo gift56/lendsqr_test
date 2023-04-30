@@ -1,10 +1,14 @@
 import { useState } from "react";
 import style from "../../styles/dashoboard.module.scss";
-import { BackIcon } from "../../assets";
-import { Link } from "react-router-dom";
+import { Avatar, BackIcon } from "../../assets";
+import { Link, useParams } from "react-router-dom";
 import { Button } from "../../components";
+import { tableData } from "../../utils/tableData";
 
 const DashboardUserDetail = () => {
+  const { id } = useParams();
+  const data = tableData.find((item: any) => item.id === id);
+  console.log(data);
   const [tab, setTab] = useState("General");
 
   const tabsItem = [
@@ -60,8 +64,15 @@ const DashboardUserDetail = () => {
         </div>
       </div>
       <div className={style.profileDetails}>
-        <div></div>
-        <div></div>
+        <div>
+          <div>
+            <img src={Avatar} alt="user_prifile" />
+            <div>
+              <h2></h2>
+            </div>
+          </div>
+        </div>
+        <div className={style.tabCon}></div>
       </div>
     </div>
   );

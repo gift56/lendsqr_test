@@ -45,7 +45,7 @@ const DashboardUser = () => {
     setIndex(id);
   };
 
-  const activities = currentData.map((data: any, i: any) => ({
+  const activities = currentData.map((data: any) => ({
     organization: (
       <span className={style.content}>{data.organizationName}</span>
     ),
@@ -54,12 +54,12 @@ const DashboardUser = () => {
     phone: <span className={style.content}>{data.phone}</span>,
     date: <span className={style.content}>{data.date}</span>,
     status: (
-      <p className={`${statusColor(data.status)} ${style.status}`}>
+      <span className={`${statusColor(data.status)} ${style.status}`}>
         {data.status}
-      </p>
+      </span>
     ),
     iconProps: (
-      <div className={style.content} onClick={() => Click(i)}>
+      <div className={style.content} onClick={() => Click(data.id)}>
         <BsThreeDotsVertical />
         <EditModal id={i} show={index} setShow={setIndex} />
       </div>
