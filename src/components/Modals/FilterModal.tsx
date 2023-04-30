@@ -1,4 +1,4 @@
-import { useRef } from "react";
+// import { useRef } from "react";
 import style from "../../styles/dashoboard.module.scss";
 import { Button, CustomizeInput, CustormizeSelect } from "..";
 
@@ -141,7 +141,7 @@ const FilterModal = ({ show, setShow }: any) => {
       <div className={style.btncontain}>
         <Button
           disabled={false}
-          onClick={() => {}}
+          onClick={() => setShow(false)}
           type="button"
           text="Reset"
           className={style.reset}
