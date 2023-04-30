@@ -389,4 +389,9 @@
   }
 }
 
-// Dashboard User
+// Dashboard Userdetails
+
+.back {
+  @include flexbox($justify: start);
+  
+}
