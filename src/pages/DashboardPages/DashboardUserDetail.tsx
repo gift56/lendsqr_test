@@ -3,7 +3,6 @@ import style from "../../styles/dashoboard.module.scss";
 import { Avatar, BackIcon } from "../../assets";
 import { Link, useParams } from "react-router-dom";
 import { Button } from "../../components";
-import { tableData } from "../../utils/tableData";
 import { IoStar } from "react-icons/io5";
 import { IoIosStarOutline } from "react-icons/io";
 import {
@@ -12,10 +11,14 @@ import {
   personData,
   socialData,
 } from "../../utils/userData";
+import useUserStore from "../../store";
+import { User } from "../../utils/types";
 
 const DashboardUserDetail = () => {
   const { id } = useParams();
-  const data = tableData.find((item: any) => item.id === id);
+  const { allUsers } = useUserStore();
+  const data: User | any = allUsers.find((item: any) => item.id === id);
+
   const [tab, setTab] = useState("General");
 
   const tabsItem = [
@@ -76,7 +79,7 @@ const DashboardUserDetail = () => {
             <img src={Avatar} alt="user_prifile" />
             <div>
               <h2>{data?.userName}</h2>
-              <p>{data?.id}</p>
+              <p>{data.id}</p>
             </div>
           </div>
           <div className={style.tiers}>
@@ -94,8 +97,8 @@ const DashboardUserDetail = () => {
             </div>
           </div>
           <div className={style.amt}>
-            <h2>₦200,000.00</h2>
-            <p>9912345678/Providus Bank</p>
+            <h2>{data.accountBalance}</h2>
+            <p>{data.accountNumber}</p>
           </div>
         </div>
         <div className={style.tabCon}>
