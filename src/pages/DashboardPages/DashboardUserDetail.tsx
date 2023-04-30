@@ -65,7 +65,7 @@ const DashboardUserDetail = () => {
         </div>
       </div>
       <div className={style.profileDetails}>
-        <div>
+        <div className={style.topSide}>
           <div>
             <img src={Avatar} alt="user_prifile" />
             <div>
@@ -94,9 +94,15 @@ const DashboardUserDetail = () => {
         </div>
         <div className={style.tabCon}>
           {tabsItem.map((item: any, i: any) => (
-            <div onClick={() => setTab(item.tabs)} key={i} className={``}>
+            <p
+              onClick={() => setTab(item.tabs)}
+              key={i}
+              className={`${style.singleTab} ${
+                tab === item.tabs && `${style.activeTab}`
+              }`}
+            >
               {item.text}
-            </div>
+            </p>
           ))}
         </div>
       </div>

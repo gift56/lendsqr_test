@@ -418,3 +418,37 @@
     }
   }
 }
+.profileDetails {
+  @include flexbox($direction: column, $align: start, $justify: space-between);
+  background-color: $white;
+  width: 100%;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  padding: 20px 40px 0;
+  height: 210px;
+  .topSide {
+    @include flexbox($justify: space-between);
+    width: 100%;
+  }
+  .tabCon {
+    @include flexbox($justify: space-between);
+    width: 100%;
+    gap: 10px;
+    .singleTab {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      color: rgba(0, 0, 0, 0.8);
+      height: 25px;
+      cursor: pointer;
+      width: 50%;
+    }
+    .activeTab {
+      border-bottom: 2px solid $primary;
+      color: $primary;
+      transition: all 300ms ease;
+    }
+  }
+}
