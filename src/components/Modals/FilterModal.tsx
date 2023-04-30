@@ -37,7 +37,11 @@ const FilterModal = ({ show, setShow }: any) => {
     },
   ];
   return (
-    <div className={`${style.filterCon}`}>
+    <div
+      className={`${
+        show ? `${style.filterCon}` : `${style.filterCon} ${style.none}`
+      }`}
+    >
       <CustormizeSelect
         showLabel={false}
         label="Organization"
