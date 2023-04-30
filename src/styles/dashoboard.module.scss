@@ -390,119 +390,137 @@
 }
 
 // Dashboard Userdetails
-
-.back {
-  @include flexbox($justify: start);
-  gap: 12px;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  color: $grayColor;
-}
-.headingStyle {
-  @include flexbox($justify: space-between);
-  width: 100%;
-  gap: 12px;
-  .buttons {
-    @include flexbox;
+.userDetailCon {
+  .back {
+    @include flexbox($justify: start);
     gap: 12px;
-    button {
-      padding: 10px 10px;
-      text-align: center;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-    .blacklist,
-    .active {
-      background-color: transparent;
-    }
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: $grayColor;
   }
-}
-.profileDetails {
-  @include flexbox($direction: column, $align: start, $justify: space-between);
-  background-color: $white;
-  width: 100%;
-  border: 1px solid rgba(33, 63, 125, 0.06);
-  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
-  border-radius: 4px;
-  padding: 20px 40px 0;
-  height: 210px;
-  .topSide {
+  .headingStyle {
     @include flexbox($justify: space-between);
     width: 100%;
-    .profile {
-      @include flexbox($justify: start);
-      gap: 16px;
-      flex: 1;
-      img {
-        width: 100px;
-        height: 100px;
-        @include flexbox;
-        object-fit: cover;
+    gap: 12px;
+    .buttons {
+      @include flexbox;
+      gap: 12px;
+      button {
+        padding: 10px 10px;
+        text-align: center;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
       }
-      div {
+      .blacklist,
+      .active {
+        background-color: transparent;
+      }
+    }
+  }
+  .profileDetails {
+    @include flexbox(
+      $direction: column,
+      $align: start,
+      $justify: space-between
+    );
+    background-color: $white;
+    width: 100%;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    padding: 20px 40px 0;
+    height: 210px;
+    .topSide {
+      @include flexbox($justify: space-between);
+      width: 100%;
+      .profile {
+        @include flexbox($justify: start);
+        gap: 16px;
+        flex: 1;
+        img {
+          width: 100px;
+          height: 100px;
+          @include flexbox;
+          object-fit: cover;
+        }
+        div {
+          @include flexbox($direction: column, $align: start);
+          gap: 10px;
+          p {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            color: $grayColor;
+          }
+        }
+      }
+      .tiers {
         @include flexbox($direction: column, $align: start);
-        gap: 10px;
-        p {
-          font-weight: 400;
+        gap: 17px;
+        border-left: 1px solid #545f7d25;
+        border-right: 1px solid #545f7d25;
+        height: 100%;
+        padding: 0 25px;
+        h5 {
+          font-weight: 500;
           font-size: 14px;
           line-height: 16px;
           color: $grayColor;
         }
+        .stars {
+          @include flexbox;
+          gap: 6px;
+          .fill {
+            color: $warning;
+          }
+        }
       }
-    }
-    .tiers {
-      @include flexbox($direction: column, $align: start);
-      gap: 17px;
-      border-left: 1px solid #545f7d25;
-      border-right: 1px solid #545f7d25;
-      height: 100%;
-      padding: 0 25px;
-      h5 {
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 16px;
-        color: $grayColor;
-      }
-      .stars {
-        @include flexbox;
-        gap: 6px;
-        .fill {
-          color: $warning;
+      .amt {
+        @include flexbox($justify: start, $direction: column, $align: start);
+        flex: 2;
+        padding: 0 30px;
+        gap: 10px;
+        p {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 14px;
+          color: $grayColor;
         }
       }
     }
-    .amt {
-      @include flexbox($justify: start, $direction: column, $align: start);
-      flex: 2;
-      padding: 0 30px;
+    .tabCon {
+      @include flexbox($justify: space-between);
+      width: 100%;
       gap: 10px;
-      p {
+      .singleTab {
         font-weight: 400;
-        font-size: 12px;
-        line-height: 14px;
-        color: $grayColor;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        color: rgba(0, 0, 0, 0.8);
+        height: 25px;
+        cursor: pointer;
+        width: 50%;
+      }
+      .activeTab {
+        border-bottom: 2px solid $primary;
+        color: $primary;
+        transition: all 300ms ease;
       }
     }
   }
-  .tabCon {
-    @include flexbox($justify: space-between);
+  .mainDetailsInfo {
+    @include flexbox($direction: column, $align: start, $justify: start);
+    background-color: $white;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
     width: 100%;
-    gap: 10px;
-    .singleTab {
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 19px;
-      text-align: center;
-      color: rgba(0, 0, 0, 0.8);
-      height: 25px;
-      cursor: pointer;
-      width: 50%;
-    }
-    .activeTab {
-      border-bottom: 2px solid $primary;
-      color: $primary;
-      transition: all 300ms ease;
+    padding: 25px 40px;
+    .personsDetail {
+      @include flexbox($direction: column, $align: start, $justify: start);
+      width: 100%;
     }
   }
 }
