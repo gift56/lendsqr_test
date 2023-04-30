@@ -7,7 +7,7 @@ import {
   Pagination,
   UserTable,
 } from "../../components";
-import { selectIcon } from "../../assets";
+import { LoadingIcon, selectIcon } from "../../assets";
 import { cardData } from "../../utils/cardData";
 import { tableData, usersColumns } from "../../utils/tableData";
 import { BsThreeDotsVertical } from "react-icons/bs";
@@ -86,9 +86,7 @@ const DashboardUser = () => {
   };
 
   const activities = currentData.map((data: any) => ({
-    organization: (
-      <span className={style.content}>{data.orgName}</span>
-    ),
+    organization: <span className={style.content}>{data.orgName}</span>,
     username: <span className={style.content}>{data.userName}</span>,
     email: <span className={style.content}>{data.email}</span>,
     phone: <span className={style.content}>{data.phoneNumber}</span>,
@@ -119,24 +117,34 @@ const DashboardUser = () => {
         ))}
       </div>
       <div className={style.tableCon}>
-        <div className={style.desktopTable}>
-          <UserTable
-            columns={usersColumns}
-            data={activities}
-            setShowFilter={setShowFilter}
-          />
-          <FilterModal show={showFilter} setShow={setShowFilter} />
-        </div>
-        <div className={style.mobileTable}>
-          <MobileTable
-            data={activities}
-            show={false}
-            text=""
-            to="/dashboard/home/"
-            className=""
-            idPresent={false}
-          />
-        </div>
+        {loading ? (
+          <div className="loadingCon">
+            <img src={LoadingIcon} alt="/" />
+          </div>
+        ) : error ? (
+          <div>Error : {error}</div>
+        ) : (
+          <>
+            <div className={style.desktopTable}>
+              <UserTable
+                columns={usersColumns}
+                data={activities}
+                setShowFilter={setShowFilter}
+              />
+              <FilterModal show={showFilter} setShow={setShowFilter} />
+            </div>
+            <div className={style.mobileTable}>
+              <MobileTable
+                data={activities}
+                show={false}
+                text=""
+                to="/dashboard/home/"
+                className=""
+                idPresent={false}
+              />
+            </div>
+          </>
+        )}
         <div className={style.paginate}>
           <div className={style.showing}>
             <span>Showing</span>
