@@ -109,7 +109,7 @@
   }
   .bars {
     margin-left: 12px;
-    @include minlaptop {
+    @include laptop {
       display: none;
     }
   }
@@ -128,9 +128,11 @@
   background-color: $white;
   left: -100%;
   transition: all 300ms ease;
-  @include minlaptop {
+  z-index: 10;
+  @include laptop {
     position: relative;
     left: 0;
+    z-index: 0;
   }
   .link {
     @include flexbox($justify: start);
