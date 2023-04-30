@@ -66,7 +66,7 @@ const DashboardUserDetail = () => {
       </div>
       <div className={style.profileDetails}>
         <div className={style.topSide}>
-          <div>
+          <div className={style.profile}>
             <img src={Avatar} alt="user_prifile" />
             <div>
               <h2>{data?.userName}</h2>

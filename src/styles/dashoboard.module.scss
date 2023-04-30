@@ -430,6 +430,43 @@
   .topSide {
     @include flexbox($justify: space-between);
     width: 100%;
+    .profile {
+      @include flexbox;
+      gap: 16px;
+      img {
+        width: 100px;
+        height: 100px;
+        @include flexbox;
+        object-fit: cover;
+      }
+      div {
+        @include flexbox($direction: column, $align: start);
+        gap: 6px;
+        p {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 16px;
+          color: $grayColor;
+        }
+      }
+    }
+    .tiers {
+      @include flexbox($direction: column, $align: start);
+      gap: 12px;
+      border-left: 1px solid #545f7d25;
+      border-right: 1px solid #545f7d25;
+      height: 100%;
+      padding: 0 25px;
+      h5 {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        color: $grayColor;
+      }
+      .stars{
+        
+      }
+    }
   }
   .tabCon {
     @include flexbox($justify: space-between);
