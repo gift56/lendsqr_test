@@ -4,8 +4,10 @@ import { LoginImg, Logo } from "../assets";
 import { Button, CustomizeInput } from "../components";
 import { useFormik } from "formik";
 import { loginSchema } from "../schema";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
   const initialValues = {
@@ -15,6 +17,7 @@ const Login = () => {
 
   const onSubmit = async (payload: any, actions: any) => {
     console.log(payload);
+    navigate("/dashboard/home");
     await new Promise((resolve) => setTimeout(resolve, 1000));
     actions.resetForm();
   };
