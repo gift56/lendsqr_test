@@ -5,7 +5,6 @@ import { Link, useParams } from "react-router-dom";
 import { Button } from "../../components";
 import { IoStar } from "react-icons/io5";
 import { IoIosStarOutline } from "react-icons/io";
-import { educationData, gurantorData, socialData } from "../../utils/userData";
 import useUserStore from "../../store";
 import { User } from "../../utils/types";
 
@@ -195,15 +194,15 @@ const DashboardUserDetail = () => {
         <div className={style.personsDetail}>
           <h3>Socials</h3>
           <div className={style.dataContent}>
-            <div  className={style.data}>
+            <div className={style.data}>
               <h5>Twitter</h5>
               <h3>{data.socials.twitter}</h3>
             </div>
-            <div  className={style.data}>
+            <div className={style.data}>
               <h5>Facebook</h5>
               <h3>{data.socials.facebook}</h3>
             </div>
-            <div  className={style.data}>
+            <div className={style.data}>
               <h5>Instagram</h5>
               <h3>{data.socials.instagram}</h3>
             </div>
@@ -212,22 +211,46 @@ const DashboardUserDetail = () => {
         <div className={style.personsDetail}>
           <h3>Guarantor</h3>
           <div className={style.dataContent}>
-            {gurantorData.map((item: any, i: any) => (
-              <div key={i} className={style.data}>
-                <h5>{item.title}</h5>
-                <h3>{item.content}</h3>
-              </div>
-            ))}
+            <div className={style.data}>
+              <h5>full Name</h5>
+              <h3>
+                {data.gurantor.firstName} {data.gurantor.lastName}
+              </h3>
+            </div>
+            <div className={style.data}>
+              <h5>Phone Number</h5>
+              <h3>{data.gurantor.phoneNumber}</h3>
+            </div>
+            <div className={style.data}>
+              <h5>Email Address</h5>
+              <h3>{data.gurantor.address}</h3>
+            </div>
+            <div className={style.data}>
+              <h5>Relationship</h5>
+              <h3>{data.gurantor.gender}</h3>
+            </div>
           </div>
         </div>
         <div className={style.personsDetail}>
           <div className={`${style.dataContent} bnone`}>
-            {gurantorData.map((item: any, i: any) => (
-              <div key={i} className={style.data}>
-                <h5>{item.title}</h5>
-                <h3>{item.content}</h3>
-              </div>
-            ))}
+            <div className={style.data}>
+              <h5>full Name</h5>
+              <h3>
+                {data.gurantor.firstName} {data.gurantor.lastName}
+              </h3>
+            </div>
+            <div className={style.data}>
+              <h5>Phone Number</h5>
+              <h3>{data.gurantor.phoneNumber}</h3>
+            </div>
+            <div className={style.data}>
+              <h5>Email Address</h5>
+              <h3>{data.gurantor.address}</h3>
+            </div>
+            <div className={style.data}>
+              <h5>Relationship</h5>
+              <h3>{data.gurantor.gender}</h3>
+            </div>
           </div>
         </div>
       </div>
