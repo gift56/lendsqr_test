@@ -2,14 +2,15 @@ import { useState, useEffect } from "react";
 import { Card, MobileTable, Pagination, UserTable } from "../../components";
 import { selectIcon } from "../../assets";
 import { cardData } from "../../utils/cardData";
-import { tableData, usersColumns } from "../../utils/tableData";
+import { usersColumns } from "../../utils/tableData";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import style from "../../styles/dashoboard.module.scss";
 import { Axios } from "../../config/config";
 import useUserStore from "../../store";
+import moment from "moment";
 
 const Dashboard = () => {
-  const [data, setData] = useState(tableData);
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const { setAllUsers } = useUserStore();
@@ -24,15 +25,37 @@ const Dashboard = () => {
     const newOffset = (event.selected * itemsPerPage) % data.length;
     setItemOffset(newOffset);
   };
+
+  const isActive = (lastActiveDate: any) => {
+    const now = moment();
+    const lastActive = moment(lastActiveDate);
+    const diffInMinutes = now.diff(lastActive, "minutes");
+    // consider a user to be active if their last activity was within the last 30 minutes
+    return diffInMinutes < 30;
+  };
+
   const statusColor = (value: any) => {
-    if (value === "Active") {
+    if (isActive(value)) {
       return style.active;
-    } else if (value === "Inactive") {
+    } else {
       return style.inactive;
-    } else if (value === "Blacklisted") {
-      return style.blacklist;
-    } else if (value === "Pending") {
-      return style.pendeing;
+    }
+    // if (value === "Active") {
+    //   return style.active;
+    // } else if (value === "Inactive") {
+    //   return style.inactive;
+    // } else if (value === "Blacklisted") {
+    //   return style.blacklist;
+    // } else if (value === "Pending") {
+    //   return style.pendeing;
+    // }
+  };
+
+  const statusName = (value: any) => {
+    if (isActive(value)) {
+      return "Active";
+    } else {
+      return "Inactive";
     }
   };
 
@@ -45,7 +68,6 @@ const Dashboard = () => {
         setAllUsers(res.data);
         setLoading(false);
       } catch (error: any) {
-        console.log(error);
         setError(error.message);
         setLoading(false);
       }
@@ -60,16 +82,14 @@ const Dashboard = () => {
   };
 
   const activities = currentData.map((data: any, i: any) => ({
-    organization: (
-      <span className={style.content}>{data.organizationName}</span>
-    ),
+    organization: <span className={style.content}>{data.orgName}</span>,
     username: <span className={style.content}>{data.userName}</span>,
     email: <span className={style.content}>{data.email}</span>,
-    phone: <span className={style.content}>{data.phone}</span>,
-    date: <span className={style.content}>{data.date}</span>,
+    phone: <span className={style.content}>{data.phoneNumber}</span>,
+    date: <span className={style.content}>{moment(data.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</span>,
     status: (
-      <p className={`${statusColor(data.status)} ${style.status}`}>
-        {data.status}
+      <p className={`${statusColor(data.lastActiveDate)} ${style.status}`}>
+        {statusName(data.lastActiveDate)}
       </p>
     ),
     iconProps: (
