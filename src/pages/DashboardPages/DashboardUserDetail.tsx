@@ -26,7 +26,7 @@ const DashboardUserDetail = () => {
           <Button
             disabled={false}
             type="button"
-            text="Blacklist User"
+            text="Activate User"
             className={style.active}
             onClick={() => {}}
           />

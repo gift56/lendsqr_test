@@ -407,7 +407,10 @@
     @include flexbox;
     gap: 12px;
     button {
-      padding: 10px 20px;
+      padding: 10px 10px;
+      text-align: center;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
     .blacklist,
     .active {
