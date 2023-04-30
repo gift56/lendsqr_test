@@ -158,23 +158,55 @@ const DashboardUserDetail = () => {
         <div className={style.personsDetail}>
           <h3>Education and Employment</h3>
           <div className={`${style.dataContent} col-4`}>
-            {educationData.map((item: any, i: any) => (
-              <div key={i} className={style.data}>
-                <h5>{item.title}</h5>
-                <h3>{item.content}</h3>
-              </div>
-            ))}
+            <div className={style.data}>
+              <h5>level of education</h5>
+              <h3>{data.education.level}</h3>
+            </div>
+            <div className={style.data}>
+              <h5>employment status</h5>
+              <h3>{data.education.employmentStatus}</h3>
+            </div>
+            <div className={style.data}>
+              <h5>sector of employment</h5>
+              <h3>{data.education.sector}</h3>
+            </div>
+            <div className={style.data}>
+              <h5>Duration of employment</h5>
+              <h3>{data.education.duration}</h3>
+            </div>
+            <div className={style.data}>
+              <h5>office email</h5>
+              <h3>{data.education.officeEmail}</h3>
+            </div>
+            <div className={style.data}>
+              <h5>Monthly income</h5>
+              <h3>
+                {data.profile.currency}
+                {data.education.monthlyIncome[1]} - {data.profile.currency}
+                {data.education.monthlyIncome[0]}
+              </h3>
+            </div>
+            <div className={style.data}>
+              <h5>loan repayment</h5>
+              <h3>{data.education.loanRepayment}</h3>
+            </div>
           </div>
         </div>
         <div className={style.personsDetail}>
           <h3>Socials</h3>
           <div className={style.dataContent}>
-            {socialData.map((item: any, i: any) => (
-              <div key={i} className={style.data}>
-                <h5>{item.title}</h5>
-                <h3>{item.content}</h3>
-              </div>
-            ))}
+            <div  className={style.data}>
+              <h5>Twitter</h5>
+              <h3>{data.socials.twitter}</h3>
+            </div>
+            <div  className={style.data}>
+              <h5>Facebook</h5>
+              <h3>{data.socials.facebook}</h3>
+            </div>
+            <div  className={style.data}>
+              <h5>Instagram</h5>
+              <h3>{data.socials.instagram}</h3>
+            </div>
           </div>
         </div>
         <div className={style.personsDetail}>
