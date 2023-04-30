@@ -79,6 +79,12 @@ const DashboardUserDetail = () => {
               <span className={style.fill}>
                 <IoStar />
               </span>
+              <span className={style.fill}>
+                <IoIosStarOutline />
+              </span>
+              <span className={style.fill}>
+                <IoIosStarOutline />
+              </span>
             </div>
           </div>
         </div>
