@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, MobileTable, Pagination, UserTable } from "../../components";
 import { selectIcon } from "../../assets";
 import { cardData } from "../../utils/cardData";
@@ -31,6 +31,19 @@ const Dashboard = () => {
       return style.pendeing;
     }
   };
+
+  useEffect(() => {
+    const fetchAllUsers = async () => {
+      try {
+        
+      } catch (error) {
+        
+      }
+    };
+    return () => {
+      fetchAllUsers();
+    };
+  }, []);
 
   const Click = (id: any) => {
     alert(id);
@@ -69,7 +82,14 @@ const Dashboard = () => {
           <UserTable columns={usersColumns} data={activities} />
         </div>
         <div className={style.mobileTable}>
-          <MobileTable data={activities} show={false} text="" to="/dashboard/home/" className="" idPresent={false} />
+          <MobileTable
+            data={activities}
+            show={false}
+            text=""
+            to="/dashboard/home/"
+            className=""
+            idPresent={false}
+          />
         </div>
         <div className={style.paginate}>
           <div className={style.showing}>
