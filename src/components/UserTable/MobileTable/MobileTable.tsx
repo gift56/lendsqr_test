@@ -45,8 +45,8 @@ const MobileTable = ({ data, text, show, className, to, idPresent }: IProp) => {
         </div>
       ) : (
         <div className={style.contentCon}>
-          {data.slice(0, 8).map((item: any, i: any) => (
-            <div key={i} className={style.contentWrapper}>
+          {data.slice(0, 8).map((item: any) => (
+            <div key={item.id} className={style.contentWrapper}>
               <div className={style.contents}>
                 <h2 className={style.content}>{item.username}</h2>
                 <span className={style.content}>{item.email}</span>
