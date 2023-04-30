@@ -214,20 +214,20 @@ const DashboardUserDetail = () => {
             <div className={style.data}>
               <h5>full Name</h5>
               <h3>
-                {data.gurantor.firstName} {data.gurantor.lastName}
+                {data.guarantor.firstName} {data.guarantor.lastName}
               </h3>
             </div>
             <div className={style.data}>
               <h5>Phone Number</h5>
-              <h3>{data.gurantor.phoneNumber}</h3>
+              <h3>{data.guarantor.phoneNumber}</h3>
             </div>
             <div className={style.data}>
               <h5>Email Address</h5>
-              <h3>{data.gurantor.address}</h3>
+              <h3>{data.guarantor.address}</h3>
             </div>
             <div className={style.data}>
               <h5>Relationship</h5>
-              <h3>{data.gurantor.gender}</h3>
+              <h3>{data.guarantor.gender}</h3>
             </div>
           </div>
         </div>
@@ -236,20 +236,20 @@ const DashboardUserDetail = () => {
             <div className={style.data}>
               <h5>full Name</h5>
               <h3>
-                {data.gurantor.firstName} {data.gurantor.lastName}
+                {data.guarantor.firstName} {data.guarantor.lastName}
               </h3>
             </div>
             <div className={style.data}>
               <h5>Phone Number</h5>
-              <h3>{data.gurantor.phoneNumber}</h3>
+              <h3>{data.guarantor.phoneNumber}</h3>
             </div>
             <div className={style.data}>
               <h5>Email Address</h5>
-              <h3>{data.gurantor.address}</h3>
+              <h3>{data.guarantor.address}</h3>
             </div>
             <div className={style.data}>
               <h5>Relationship</h5>
-              <h3>{data.gurantor.gender}</h3>
+              <h3>{data.guarantor.gender}</h3>
             </div>
           </div>
         </div>
