@@ -207,7 +207,28 @@
   padding: 20px 16px 40px;
   gap: 20px;
   .editContainer {
+    position: absolute;
+    top: 0;
+    left: -150px;
+    z-index: 10;
     background-color: $white;
+    color: $grayColor;
+    @include flexbox($direction: column, $justify: start, $align: start);
+    gap: 18px;
+    border: 1px solid rgba(84, 95, 125, 0.04);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    width: 180px;
+    height: 130px;
+    padding: 20px;
+    a {
+      @include flexbox($align: flex-start);
+      gap: 12px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      color: $grayColor;
+    }
   }
   .desktopTable {
     width: 100%;

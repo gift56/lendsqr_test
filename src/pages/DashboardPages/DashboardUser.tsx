@@ -61,7 +61,7 @@ const DashboardUser = () => {
     iconProps: (
       <div className={style.content} onClick={() => Click(i)}>
         <BsThreeDotsVertical />
-        <EditModal show={index} setShow={setIndex} />
+        <EditModal id={i} show={index} setShow={setIndex} />
       </div>
     ),
   }));
