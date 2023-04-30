@@ -51,6 +51,7 @@
     @include flexbox($direction: column, $justify: start, $align: start);
     gap: 16px;
     .contentWrapper {
+      width: 100%;
       @include flexbox($justify: space-between, $align: start);
       border-bottom: 1px solid rgba(33, 63, 125, 0.1);
       padding-bottom: 10px;

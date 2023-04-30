@@ -5,21 +5,22 @@ import { cardData } from "../../utils/cardData";
 import { tableData, usersColumns } from "../../utils/tableData";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import style from "../../styles/dashoboard.module.scss";
+import { Axios } from "../../config/config";
 
 const Dashboard = () => {
   const [data, setData] = useState(tableData);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [itemOffset, setItemOffset] = useState(0);
   const itemsPerPage = 14;
   const endOffset = itemOffset + itemsPerPage;
   const currentData = data.slice(itemOffset, endOffset);
   const pageCount = Math.ceil(data.length / itemsPerPage);
-
   // Invoke when user click to request another page.
   const handlePageClick = (event: any) => {
     const newOffset = (event.selected * itemsPerPage) % data.length;
     setItemOffset(newOffset);
   };
-
   const statusColor = (value: any) => {
     if (value === "Active") {
       return style.active;
@@ -35,9 +36,11 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchAllUsers = async () => {
       try {
-        
-      } catch (error) {
-        
+        const res = await Axios.get("/users");
+        console.log(res.data);
+      } catch (error: any) {
+        console.log(error);
+        setError(error.message);
       }
     };
     return () => {

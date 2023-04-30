@@ -32,11 +32,13 @@ const MobileTable = ({ data, text, show, className, to, idPresent }: IProp) => {
             <Link to={`${to}${i}`} key={i} className={style.contentWrapper}>
               <div className={style.contents}>
                 <h2 className={style.content}>{item.username}</h2>
-                <p className={style.content}>{item.email}</p>
+                <span className={style.content}>{item.email}</span>
               </div>
               <div className={style.contents2}>
-                <p className={style.content}>{item.phone}</p>
-                <p className={`${statusColor(item.status)}`}>{item.status}</p>
+                <span className={style.content}>{item.phone}</span>
+                <span className={`${statusColor(item.status)}`}>
+                  {item.status}
+                </span>
               </div>
             </Link>
           ))}
@@ -47,11 +49,13 @@ const MobileTable = ({ data, text, show, className, to, idPresent }: IProp) => {
             <div key={i} className={style.contentWrapper}>
               <div className={style.contents}>
                 <h2 className={style.content}>{item.username}</h2>
-                <p className={style.content}>{item.email}</p>
+                <span className={style.content}>{item.email}</span>
               </div>
               <div className={style.contents2}>
-                <p className={style.content}>{item.phone}</p>
-                <p className={`${statusColor(item.status)}`}>{item.status}</p>
+                <span className={style.content}>{item.phone}</span>
+                <span className={`${statusColor(item.status)}`}>
+                  {item.status}
+                </span>
               </div>
             </div>
           ))}
