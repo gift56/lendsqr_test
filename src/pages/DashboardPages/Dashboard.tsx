@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Card, MobileTable, Pagination, UserTable } from "../../components";
-import { selectIcon } from "../../assets";
+import { LoadingIcon, selectIcon } from "../../assets";
 import { cardData } from "../../utils/cardData";
 import { usersColumns } from "../../utils/tableData";
 import { BsThreeDotsVertical } from "react-icons/bs";
@@ -32,8 +32,7 @@ const Dashboard = () => {
     const diffInDays = now.diff(lastActive, "days");
     if (diffInDays < 1) {
       return style.pending;
-    } 
-    else if (diffInDays < 7) {
+    } else if (diffInDays < 7) {
       return style.active;
     } else if (diffInDays < 30) {
       return style.inactive;
@@ -111,7 +110,9 @@ const Dashboard = () => {
       </div>
       <div className={style.tableCon}>
         {loading ? (
-          <div>Loading...</div>
+          <div className="loadingCon">
+            <img src={LoadingIcon} alt="/" />
+          </div>
         ) : error ? (
           <div>Error : {error}</div>
         ) : (

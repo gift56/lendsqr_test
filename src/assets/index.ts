@@ -34,6 +34,7 @@ import Avatar from "./icons/avatar.svg";
 import BackIcon from "./icons/backarrow.svg";
 import SearchIcon from "./icons/search.svg";
 import FilterIcon from "./icons/filter.svg";
+import LoadingIcon from "./icons/loader.svg";
 
 export {
   Logo,
@@ -70,4 +71,5 @@ export {
   SettlementIcon,
   SearchIcon,
   FilterIcon,
+  LoadingIcon,
 };
