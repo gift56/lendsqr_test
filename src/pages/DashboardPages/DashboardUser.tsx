@@ -82,7 +82,7 @@ const DashboardUser = () => {
   }, []);
 
   const Click = (id: any) => {
-    alert(id);
+    setIndex(id);
   };
 
   const activities = currentData.map((data: any) => ({
