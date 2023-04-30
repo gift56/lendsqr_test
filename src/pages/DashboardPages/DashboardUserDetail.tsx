@@ -119,6 +119,49 @@ const DashboardUserDetail = () => {
             ))}
           </div>
         </div>
+        <div className={style.personsDetail}>
+          <h3>Education and Employment</h3>
+          <div className={style.dataContent}>
+            {personData.map((item: any, i: any) => (
+              <div key={i} className={style.data}>
+                <h5>{item.title}</h5>
+                <h3>{item.content}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className={style.personsDetail}>
+          <h3>Socials</h3>
+          <div className={style.dataContent}>
+            {personData.map((item: any, i: any) => (
+              <div key={i} className={style.data}>
+                <h5>{item.title}</h5>
+                <h3>{item.content}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className={style.personsDetail}>
+          <h3>Guarantor</h3>
+          <div className={style.dataContent}>
+            {personData.map((item: any, i: any) => (
+              <div key={i} className={style.data}>
+                <h5>{item.title}</h5>
+                <h3>{item.content}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className={style.personsDetail}>
+          <div className={`${style.dataContent} bnone`}>
+            {personData.map((item: any, i: any) => (
+              <div key={i} className={style.data}>
+                <h5>{item.title}</h5>
+                <h3>{item.content}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

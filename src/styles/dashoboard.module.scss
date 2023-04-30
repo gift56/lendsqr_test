@@ -430,7 +430,7 @@
     box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
     border-radius: 4px;
     padding: 20px 40px 0;
-    height: 210px;
+    gap: 40px;
     .topSide {
       @include flexbox($justify: space-between);
       width: 100%;
@@ -513,12 +513,14 @@
   .mainDetailsInfo {
     @include flexbox($direction: column, $align: start, $justify: start);
     background-color: $white;
+    gap: 20px;
     border: 1px solid rgba(33, 63, 125, 0.06);
     box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
     border-radius: 4px;
     width: 100%;
     padding: 25px 40px;
     margin-bottom: 10vh;
+
     .personsDetail {
       @include flexbox($direction: column, $align: start, $justify: start);
       width: 100%;
@@ -558,3 +560,4 @@
     }
   }
 }
+
