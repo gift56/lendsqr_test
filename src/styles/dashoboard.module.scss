@@ -399,3 +399,12 @@
   line-height: 19px;
   color: $grayColor;
 }
+.headingStyle {
+  @include flexbox($justify: space-between);
+  width: 100%;
+  gap: 12px;
+  .buttons {
+    @include flexbox;
+    gap: 12px;
+  }
+}
