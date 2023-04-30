@@ -400,14 +400,21 @@
     color: $grayColor;
   }
   .headingStyle {
-    @include flexbox($justify: space-between);
+    @include flexbox($justify: start, $direction: column, $align: start);
+    @include phone {
+      @include flexbox($justify: space-between, $direction: row);
+    }
     width: 100%;
     gap: 12px;
     .buttons {
       @include flexbox;
       gap: 12px;
       button {
-        padding: 10px 10px;
+        padding: 10px 8px;
+        font-size: 12px;
+        @include phone {
+          padding: 10px 10px;
+        }
         text-align: center;
         letter-spacing: 0.1em;
         text-transform: uppercase;
