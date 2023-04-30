@@ -1,8 +1,21 @@
-// import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import style from "../../styles/dashoboard.module.scss";
 import { Button, CustomizeInput, CustormizeSelect } from "..";
 
 const FilterModal = ({ show, setShow }: any) => {
+  const modalRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const handleClickOutside = (event: any) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        setShow(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   const filterOptions = [
     {
       text: "Select",
@@ -38,6 +51,7 @@ const FilterModal = ({ show, setShow }: any) => {
   ];
   return (
     <div
+      ref={modalRef}
       className={`${
         show ? `${style.filterCon}` : `${style.filterCon} ${style.none}`
       }`}

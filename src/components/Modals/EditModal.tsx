@@ -9,7 +9,7 @@ const EditModal = ({ id, show, setShow }: any) => {
   useEffect(() => {
     const handleClickOutside = (event: any) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
-        setShow(false);
+        setShow(null);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
