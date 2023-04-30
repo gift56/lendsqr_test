@@ -218,7 +218,7 @@
       border: 1px solid rgba(84, 95, 125, 0.14);
       box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
       border-radius: 4px;
-      height: 95%;
+      height: 90%;
       width: 26%;
       padding: 25px;
       @include flexbox($direction: column, $align: start, $justify: start);
@@ -228,6 +228,24 @@
         font-size: 14px;
         line-height: 16px;
         color: $grayColor;
+      }
+      .btncontain {
+        @include flexbox;
+        width: 100%;
+        gap: 12px;
+        .reset {
+          border: 1px solid #545f7d;
+          background-color: transparent;
+          color: $grayColor;
+        }
+        .filter {
+          background-color: $primary;
+          border: 1px solid $primary;
+          color: $white;
+        }
+        button {
+          width: 50%;
+        }
       }
     }
   }

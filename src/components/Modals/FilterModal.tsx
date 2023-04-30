@@ -136,18 +136,18 @@ const FilterModal = ({ show, setShow }: any) => {
       </CustormizeSelect>
       <div className={style.btncontain}>
         <Button
-          disabled
+          disabled={false}
           onClick={() => {}}
           type="button"
           text="Reset"
           className={style.reset}
         />
         <Button
-          disabled
+          disabled={false}
           onClick={() => {}}
           type="button"
           text="Filter"
-          className={style.reset}
+          className={style.filter}
         />
       </div>
     </div>
