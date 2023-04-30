@@ -7,7 +7,7 @@ const EditModal = ({ id, show, setShow }: any) => {
   return (
     <>
       {show == id && (
-        <div className={style.editContainer}>
+        <div onClick={() => setShow(null)} className={style.editContainer}>
           <Link to={`/dashboard/users/${show}`}>
             <span>
               <IoEyeOutline size={18} />
