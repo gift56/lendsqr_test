@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import style from "../../styles/dashoboard.module.scss";
-import { CustomizeInput, CustormizeSelect } from "..";
+import { Button, CustomizeInput, CustormizeSelect } from "..";
 
 const FilterModal = ({ show, setShow }: any) => {
   const filterOptions = [
@@ -11,6 +11,29 @@ const FilterModal = ({ show, setShow }: any) => {
     {
       text: "Organization",
       value: "organization",
+    },
+  ];
+
+  const statusOptions = [
+    {
+      text: "Select",
+      value: "",
+    },
+    {
+      text: "Active",
+      value: "Active",
+    },
+    {
+      text: "Inactive",
+      value: "Inactive",
+    },
+    {
+      text: "Pending",
+      value: "Pending",
+    },
+    {
+      text: "Blacklisted",
+      value: "Blacklisted",
     },
   ];
   return (
@@ -105,12 +128,28 @@ const FilterModal = ({ show, setShow }: any) => {
         labelClassName={style.label}
         className="mainInput"
       >
-        {filterOptions.map((option: any, i: any) => (
+        {statusOptions.map((option: any, i: any) => (
           <option id="status" value={option.value} key={i}>
             {option.text}
           </option>
         ))}
       </CustormizeSelect>
+      <div className={style.btncontain}>
+        <Button
+          disabled
+          onClick={() => {}}
+          type="button"
+          text="Reset"
+          className={style.reset}
+        />
+        <Button
+          disabled
+          onClick={() => {}}
+          type="button"
+          text="Filter"
+          className={style.reset}
+        />
+      </div>
     </div>
   );
 };
