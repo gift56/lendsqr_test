@@ -28,8 +28,8 @@ const MobileTable = ({ data, text, show, className, to, idPresent }: IProp) => {
       {show === true && <h2 className={style.h2}>{text}</h2>}
       {idPresent === true ? (
         <div className={style.contentCon}>
-          {data.slice(0, 8).map((item: any, i: any) => (
-            <Link to={`${to}${i}`} key={i} className={style.contentWrapper}>
+          {data.slice(0, 8).map((item: any) => (
+            <Link to={`${to}${item.id}`} key={item.id} className={style.contentWrapper}>
               <div className={style.contents}>
                 <h2 className={style.content}>{item.username}</h2>
                 <span className={style.content}>{item.email}</span>

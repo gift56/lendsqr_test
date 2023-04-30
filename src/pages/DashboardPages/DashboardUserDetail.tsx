@@ -78,8 +78,8 @@ const DashboardUserDetail = () => {
           <div className={style.profile}>
             <img src={Avatar} alt="user_prifile" />
             <div>
-              <h2>{data?.userName}</h2>
-              <p>{data.id}</p>
+              <h2>{data.userName}</h2>
+              <p>{data.accountNumber}</p>
             </div>
           </div>
           <div className={style.tiers}>
@@ -98,7 +98,7 @@ const DashboardUserDetail = () => {
           </div>
           <div className={style.amt}>
             <h2>{data.accountBalance}</h2>
-            <p>{data.accountNumber}</p>
+            <p>{data?.phoneNumber}/{data.orgName}</p>
           </div>
         </div>
         <div className={style.tabCon}>
