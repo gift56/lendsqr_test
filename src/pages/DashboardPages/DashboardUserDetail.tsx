@@ -113,7 +113,8 @@ const DashboardUserDetail = () => {
           <div className={style.dataContent}>
             {personData.map((item: any, i: any) => (
               <div key={i} className={style.data}>
-                
+                <h5>{item.title}</h5>
+                <h3>{item.content}</h3>
               </div>
             ))}
           </div>
