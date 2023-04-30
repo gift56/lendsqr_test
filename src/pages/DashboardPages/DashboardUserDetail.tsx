@@ -94,7 +94,9 @@ const DashboardUserDetail = () => {
         </div>
         <div className={style.tabCon}>
           {tabsItem.map((item: any, i: any) => (
-            <div></div>
+            <div onClick={() => setTab(item.tabs)} key={i} className={``}>
+              {item.text}
+            </div>
           ))}
         </div>
       </div>
