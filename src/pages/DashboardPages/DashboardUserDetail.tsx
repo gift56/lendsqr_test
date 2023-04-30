@@ -39,6 +39,8 @@ const DashboardUserDetail = () => {
     },
   ];
 
+  
+
   return (
     <div className={`${style.mainDashboard} ${style.userDetailCon}`}>
       <Link to="/dashboard/users" className={style.back}>
@@ -109,9 +111,7 @@ const DashboardUserDetail = () => {
       <div className={style.mainDetailsInfo}>
         <div className={style.personsDetail}>
           <h3>Personal Information</h3>
-          <div className={style.dataContent}>
-
-          </div>
+          <div className={style.dataContent}></div>
         </div>
       </div>
     </div>
