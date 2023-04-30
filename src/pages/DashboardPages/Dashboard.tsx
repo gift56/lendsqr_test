@@ -26,36 +26,34 @@ const Dashboard = () => {
     setItemOffset(newOffset);
   };
 
-  const isActive = (lastActiveDate: any) => {
-    const now = moment();
-    const lastActive = moment(lastActiveDate);
-    const diffInMinutes = now.diff(lastActive, "minutes");
-    // consider a user to be active if their last activity was within the last 30 minutes
-    return diffInMinutes < 30;
-  };
-
   const statusColor = (value: any) => {
-    if (isActive(value)) {
+    const now = moment();
+    const lastActive = moment(value);
+    const diffInDays = now.diff(lastActive, "days");
+    if (diffInDays < 1) {
+      return style.pending;
+    } 
+    else if (diffInDays < 7) {
       return style.active;
-    } else {
+    } else if (diffInDays < 30) {
       return style.inactive;
+    } else {
+      return style.blacklist;
     }
-    // if (value === "Active") {
-    //   return style.active;
-    // } else if (value === "Inactive") {
-    //   return style.inactive;
-    // } else if (value === "Blacklisted") {
-    //   return style.blacklist;
-    // } else if (value === "Pending") {
-    //   return style.pendeing;
-    // }
   };
 
   const statusName = (value: any) => {
-    if (isActive(value)) {
+    const now = moment();
+    const lastActive = moment(value);
+    const diffInDays = now.diff(lastActive, "days");
+    if (diffInDays < 1) {
+      return "Pending";
+    } else if (diffInDays < 7) {
       return "Active";
-    } else {
+    } else if (diffInDays < 30) {
       return "Inactive";
+    } else {
+      return "Blacklisted";
     }
   };
 
@@ -86,7 +84,11 @@ const Dashboard = () => {
     username: <span className={style.content}>{data.userName}</span>,
     email: <span className={style.content}>{data.email}</span>,
     phone: <span className={style.content}>{data.phoneNumber}</span>,
-    date: <span className={style.content}>{moment(data.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</span>,
+    date: (
+      <span className={style.content}>
+        {moment(data.createdAt).format("MMMM Do YYYY, h:mm:ss a")}
+      </span>
+    ),
     status: (
       <p className={`${statusColor(data.lastActiveDate)} ${style.status}`}>
         {statusName(data.lastActiveDate)}
