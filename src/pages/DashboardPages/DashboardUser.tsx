@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Card,
   EditModal,
@@ -12,9 +12,14 @@ import { cardData } from "../../utils/cardData";
 import { tableData, usersColumns } from "../../utils/tableData";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import style from "../../styles/dashoboard.module.scss";
+import { Axios } from "../../config/config";
+import moment from "moment";
 
 const DashboardUser = () => {
   const [data, setData] = useState(tableData);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
   const [showFilter, setShowFilter] = useState(false);
   const [index, setIndex] = useState(null);
   const [itemOffset, setItemOffset] = useState(0);
@@ -30,33 +35,72 @@ const DashboardUser = () => {
   };
 
   const statusColor = (value: any) => {
-    if (value === "Active") {
+    const now = moment();
+    const lastActive = moment(value);
+    const diffInDays = now.diff(lastActive, "days");
+    if (diffInDays < 1) {
+      return style.pending;
+    } else if (diffInDays < 7) {
       return style.active;
-    } else if (value === "Inactive") {
+    } else if (diffInDays < 30) {
       return style.inactive;
-    } else if (value === "Blacklisted") {
+    } else {
       return style.blacklist;
-    } else if (value === "Pending") {
-      return style.pendeing;
     }
   };
 
+  const statusName = (value: any) => {
+    const now = moment();
+    const lastActive = moment(value);
+    const diffInDays = now.diff(lastActive, "days");
+    if (diffInDays < 1) {
+      return "Pending";
+    } else if (diffInDays < 7) {
+      return "Active";
+    } else if (diffInDays < 30) {
+      return "Inactive";
+    } else {
+      return "Blacklisted";
+    }
+  };
+
+  useEffect(() => {
+    const fetchAllUsers = async () => {
+      setLoading(true);
+      try {
+        const res = await Axios.get("/users");
+        setData(res.data);
+        setLoading(false);
+      } catch (error: any) {
+        setError(error.message);
+        setLoading(false);
+      }
+    };
+    return () => {
+      fetchAllUsers();
+    };
+  }, []);
+
   const Click = (id: any) => {
-    setIndex(id);
+    alert(id);
   };
 
   const activities = currentData.map((data: any) => ({
     organization: (
-      <span className={style.content}>{data.organizationName}</span>
+      <span className={style.content}>{data.orgName}</span>
     ),
     username: <span className={style.content}>{data.userName}</span>,
     email: <span className={style.content}>{data.email}</span>,
-    phone: <span className={style.content}>{data.phone}</span>,
-    date: <span className={style.content}>{data.date}</span>,
-    status: (
-      <span className={`${statusColor(data.status)} ${style.status}`}>
-        {data.status}
+    phone: <span className={style.content}>{data.phoneNumber}</span>,
+    date: (
+      <span className={style.content}>
+        {moment(data.createdAt).format("MMMM Do YYYY, h:mm:ss a")}
       </span>
+    ),
+    status: (
+      <p className={`${statusColor(data.lastActiveDate)} ${style.status}`}>
+        {statusName(data.lastActiveDate)}
+      </p>
     ),
     iconProps: (
       <div className={style.content} onClick={() => Click(data.id)}>
