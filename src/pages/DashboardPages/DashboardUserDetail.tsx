@@ -4,11 +4,12 @@ import { Avatar, BackIcon } from "../../assets";
 import { Link, useParams } from "react-router-dom";
 import { Button } from "../../components";
 import { tableData } from "../../utils/tableData";
+import { IoStar } from "react-icons/io5";
+import { IoIosStarOutline } from "react-icons/io";
 
 const DashboardUserDetail = () => {
   const { id } = useParams();
   const data = tableData.find((item: any) => item.id === id);
-  console.log(data);
   const [tab, setTab] = useState("General");
 
   const tabsItem = [
@@ -68,7 +69,16 @@ const DashboardUserDetail = () => {
           <div>
             <img src={Avatar} alt="user_prifile" />
             <div>
-              <h2></h2>
+              <h2>{data?.userName}</h2>
+              <p>{data?.id}</p>
+            </div>
+          </div>
+          <div className={style.tiers}>
+            <h5>{`User’s Tier`}</h5>
+            <div className={style.stars}>
+              <span className={style.fill}>
+                <IoStar />
+              </span>
             </div>
           </div>
         </div>
