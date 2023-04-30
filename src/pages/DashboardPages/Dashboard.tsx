@@ -78,7 +78,7 @@ const Dashboard = () => {
     alert(id);
   };
 
-  const activities = currentData.map((data: any, i: any) => ({
+  const activities = currentData.map((data: any) => ({
     organization: <span className={style.content}>{data.orgName}</span>,
     username: <span className={style.content}>{data.userName}</span>,
     email: <span className={style.content}>{data.email}</span>,
@@ -94,7 +94,7 @@ const Dashboard = () => {
       </p>
     ),
     iconProps: (
-      <div className={style.content} onClick={() => Click(i)}>
+      <div className={style.content} onClick={() => Click(data.id)}>
         <BsThreeDotsVertical />
       </div>
     ),
