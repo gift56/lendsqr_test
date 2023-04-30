@@ -27,7 +27,7 @@ const DashboardUserDetail = () => {
             disabled={false}
             type="button"
             text="Blacklist User"
-            className={style.activate}
+            className={style.active}
             onClick={() => {}}
           />
         </div>

@@ -406,5 +406,12 @@
   .buttons {
     @include flexbox;
     gap: 12px;
+    button {
+      padding: 10px 20px;
+    }
+    .blacklist,
+    .active {
+      background-color: transparent;
+    }
   }
 }
