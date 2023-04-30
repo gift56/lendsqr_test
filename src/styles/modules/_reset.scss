@@ -32,11 +32,11 @@ select {
   appearance: none;
   cursor: pointer;
 }
-::-webkit-calendar-picker-indicator {
-  width: 50px;
-  height: 48px;
-  background-image: url(../../assets/icons/calendar.svg) !important;
-  background-size: 40% !important;
-  background-position: center !important;
-  cursor: pointer;
-}
+// ::-webkit-calendar-picker-indicator {
+//   width: 18px;
+//   height: 18px;
+//   background-image: url(../../assets/icons/calendar.svg) !important;
+//   background-size: 40% !important;
+//   background-position: center !important;
+//   cursor: pointer;
+// }
