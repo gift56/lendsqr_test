@@ -6,11 +6,14 @@ import { tableData, usersColumns } from "../../utils/tableData";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import style from "../../styles/dashoboard.module.scss";
 import { Axios } from "../../config/config";
+import useUserStore from "../../store";
 
 const Dashboard = () => {
   const [data, setData] = useState(tableData);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const { setAllUsers } = useUserStore();
+
   const [itemOffset, setItemOffset] = useState(0);
   const itemsPerPage = 14;
   const endOffset = itemOffset + itemsPerPage;
@@ -35,12 +38,16 @@ const Dashboard = () => {
 
   useEffect(() => {
     const fetchAllUsers = async () => {
+      setLoading(true);
       try {
         const res = await Axios.get("/users");
-        console.log(res.data);
+        setData(res.data);
+        setAllUsers(res.data);
+        setLoading(false);
       } catch (error: any) {
         console.log(error);
         setError(error.message);
+        setLoading(false);
       }
     };
     return () => {
@@ -81,19 +88,28 @@ const Dashboard = () => {
         ))}
       </div>
       <div className={style.tableCon}>
-        <div className={style.desktopTable}>
-          <UserTable columns={usersColumns} data={activities} />
-        </div>
-        <div className={style.mobileTable}>
-          <MobileTable
-            data={activities}
-            show={false}
-            text=""
-            to="/dashboard/home/"
-            className=""
-            idPresent={false}
-          />
-        </div>
+        {loading ? (
+          <div>Loading...</div>
+        ) : error ? (
+          <div>Error : {error}</div>
+        ) : (
+          <>
+            <div className={style.desktopTable}>
+              <UserTable columns={usersColumns} data={activities} />
+            </div>
+
+            <div className={style.mobileTable}>
+              <MobileTable
+                data={activities}
+                show={false}
+                text=""
+                to="/dashboard/home/"
+                className=""
+                idPresent={false}
+              />
+            </div>
+          </>
+        )}
         <div className={style.paginate}>
           <div className={style.showing}>
             <span>Showing</span>
