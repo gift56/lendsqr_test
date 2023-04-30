@@ -8,6 +8,7 @@ import MobileTable from "./UserTable/MobileTable/MobileTable";
 import UserTable from "./UserTable/UserTable";
 import FilterModal from "./Modals/FilterModal";
 import CustormizeSelect from "./Inputs/CustormizeSelect";
+import EditModal from "./Modals/EditModal";
 
 export {
   Button,
@@ -20,4 +21,5 @@ export {
   UserTable,
   FilterModal,
   CustormizeSelect,
+  EditModal,
 };

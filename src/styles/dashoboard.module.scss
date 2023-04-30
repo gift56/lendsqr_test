@@ -206,6 +206,9 @@
   width: 100%;
   padding: 20px 16px 40px;
   gap: 20px;
+  .editContainer{
+    
+  }
   .desktopTable {
     width: 100%;
     position: relative;
@@ -353,6 +356,7 @@
       line-height: 16px;
     }
     .content {
+      position: relative;
       font-weight: 400;
       font-size: 14px;
       line-height: 16px;

@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { Card, FilterModal, MobileTable, Pagination, UserTable } from "../../components";
+import {
+  Card,
+  EditModal,
+  FilterModal,
+  MobileTable,
+  Pagination,
+  UserTable,
+} from "../../components";
 import { selectIcon } from "../../assets";
 import { cardData } from "../../utils/cardData";
 import { tableData, usersColumns } from "../../utils/tableData";
@@ -9,6 +16,7 @@ import style from "../../styles/dashoboard.module.scss";
 const DashboardUser = () => {
   const [data, setData] = useState(tableData);
   const [showFilter, setShowFilter] = useState(false);
+  const [index, setIndex] = useState(null);
   const [itemOffset, setItemOffset] = useState(0);
   const itemsPerPage = 14;
   const endOffset = itemOffset + itemsPerPage;
@@ -34,7 +42,7 @@ const DashboardUser = () => {
   };
 
   const Click = (id: any) => {
-    alert(id);
+    setIndex(id);
   };
 
   const activities = currentData.map((data: any, i: any) => ({
@@ -53,6 +61,7 @@ const DashboardUser = () => {
     iconProps: (
       <div className={style.content} onClick={() => Click(i)}>
         <BsThreeDotsVertical />
+        <EditModal show={index} setShow={setIndex} />
       </div>
     ),
   }));
