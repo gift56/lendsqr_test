@@ -56,19 +56,19 @@ const Dashboard = () => {
     }
   };
 
+  const fetchAllUsers = async () => {
+    setLoading(true);
+    try {
+      const res = await Axios.get("/users");
+      setData(res.data);
+      setAllUsers(res.data);
+      setLoading(false);
+    } catch (error: any) {
+      setError(error.message);
+      setLoading(false);
+    }
+  };
   useEffect(() => {
-    const fetchAllUsers = async () => {
-      setLoading(true);
-      try {
-        const res = await Axios.get("/users");
-        setData(res.data);
-        setAllUsers(res.data);
-        setLoading(false);
-      } catch (error: any) {
-        setError(error.message);
-        setLoading(false);
-      }
-    };
     return () => {
       fetchAllUsers();
     };
