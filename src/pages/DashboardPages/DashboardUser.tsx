@@ -11,7 +11,6 @@ import { LoadingIcon, selectIcon } from "../../assets";
 import { cardData } from "../../utils/cardData";
 import { usersColumns } from "../../utils/tableData";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import { Axios } from "../../config/config";
 import moment from "moment";
 import useUserStore from "../../store";
 import style from "../../styles/dashoboard.module.scss";
