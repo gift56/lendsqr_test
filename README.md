@@ -61,10 +61,18 @@ The test for the classes are in the [test_models](./tests/test_models/) folder.
 
 > Report issues/bug here: [Issues](https://github.com/gift56)
 
+Please try to create bug reports that are:
+
+- _Reproducible._ Include steps to reproduce the problem.
+- _Specific._ Include as much detail as possible: which version, what environment, etc.
+- _Unique._ Do not duplicate existing opened issues.
+- _Scoped to a Single Bug._ One bug per report.
+
+
 ---
 
 ## Built by:
 
 Efe Gift <efeasiughu@gmail.com>
 
-- **Efe G** -[gift56](https://github.com/gift56)
+- **Efe G** - [gift56](https://github.com/gift56)
