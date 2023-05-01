@@ -1,3 +1,4 @@
+
 {
   "compilerOptions": {
     "target": "ESNext",
@@ -10,14 +11,16 @@
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
     "jsx": "react-jsx",
 
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Output directory */
+    "outDir": "./dist"
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
