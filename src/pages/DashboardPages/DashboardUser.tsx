@@ -68,8 +68,8 @@ const DashboardUser = () => {
       fetchAllUsers();
     } catch (error: any) {
       console.log(error);
-      setLoading(false);
       setError(error.message);
+      setLoading();
     }
   }, []);
 

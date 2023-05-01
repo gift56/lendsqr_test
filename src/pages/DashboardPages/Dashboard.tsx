@@ -57,8 +57,8 @@ const Dashboard = () => {
     try {
       fetchAllUsers();
     } catch (error: any) {
+      setLoading();
       console.log(error);
-      setLoading(false);
       setError(error.message);
     }
   }, []);
