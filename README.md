@@ -6,7 +6,7 @@ for deployment npm run build
 
 ## This is the official codebase for Lendsqr project
 
-Open [Lendsqr](https://) to preview the complete projects.
+Open [Lendsqr](https://lendsqr-project.vercel.app/) to preview the complete projects.
 
 ## Description
 

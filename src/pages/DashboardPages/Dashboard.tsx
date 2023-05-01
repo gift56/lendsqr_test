@@ -5,10 +5,9 @@ import { cardData } from "../../utils/cardData";
 import { usersColumns } from "../../utils/tableData";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import style from "../../styles/dashoboard.module.scss";
-// import { Axios } from "../../config/config";
+import { Axios } from "../../config/config";
 import useUserStore from "../../store";
 import moment from "moment";
-import axios from "axios";
 
 const Dashboard = () => {
   const [data, setData] = useState([]);
@@ -60,12 +59,13 @@ const Dashboard = () => {
   const fetchAllUsers = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users");
+      const res = await Axios.get("/users");
+      console.log(res);
       setData(res.data);
       setAllUsers(res.data);
       setLoading(false);
     } catch (error: any) {
-      console.log(error)
+      console.log(error);
       setError(error.message);
       setLoading(false);
     }
