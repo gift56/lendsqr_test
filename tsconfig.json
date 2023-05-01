@@ -1,4 +1,3 @@
-
 {
   "compilerOptions": {
     "target": "ESNext",
@@ -8,9 +7,10 @@
 
     /* Bundler mode */
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    "allowImportingTsExtensions": false,
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "noEmit": false,
     "jsx": "react-jsx",
 
     /* Linting */
@@ -18,9 +18,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-
-    /* Output directory */
-    "outDir": "./dist"
+    "outDir": "./dist",
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
