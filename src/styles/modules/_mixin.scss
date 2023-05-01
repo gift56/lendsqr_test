@@ -1,3 +1,8 @@
+@mixin desktop {
+  @media screen and (min-width: 1558px) {
+    @content;
+  }
+}
 @mixin minlaptop {
   @media screen and (min-width: 1024px) {
     @content;
