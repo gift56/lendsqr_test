@@ -1,28 +1,26 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, MobileTable, Pagination, UserTable } from "../../components";
 import { LoadingIcon, selectIcon } from "../../assets";
 import { cardData } from "../../utils/cardData";
 import { usersColumns } from "../../utils/tableData";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import style from "../../styles/dashoboard.module.scss";
-import { Axios } from "../../config/config";
+// import { Axios } from "../../config/config";
 import useUserStore from "../../store";
 import moment from "moment";
 
 const Dashboard = () => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const { setAllUsers } = useUserStore();
+  const { fetchAllUsers, allUsers, loading } = useUserStore();
 
   const [itemOffset, setItemOffset] = useState(0);
   const itemsPerPage = 14;
   const endOffset = itemOffset + itemsPerPage;
-  const currentData = data.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(data.length / itemsPerPage);
+  const currentData = allUsers.slice(itemOffset, endOffset);
+  const pageCount = Math.ceil(allUsers.length / itemsPerPage);
   // Invoke when user click to request another page.
   const handlePageClick = (event: any) => {
-    const newOffset = (event.selected * itemsPerPage) % data.length;
+    const newOffset = (event.selected * itemsPerPage) % allUsers.length;
     setItemOffset(newOffset);
   };
 
@@ -56,24 +54,27 @@ const Dashboard = () => {
     }
   };
 
-  const fetchAllUsers = async () => {
-    setLoading(true);
+  // const fetchAllUsers = async () => {
+  //   setLoading(true);
+  //   try {
+  //     const res = await Axios.get("/users");
+  //     console.log(res);
+  //     setData(res.data);
+  //     setAllUsers(res.data);
+  //     setLoading(false);
+  //   } catch (error: any) {
+  //     console.log(error);
+  //     setError(error.message);
+  //     setLoading(false);
+  //   }
+  // };
+  useEffect(() => {
     try {
-      const res = await Axios.get("/users");
-      console.log(res);
-      setData(res.data);
-      setAllUsers(res.data);
-      setLoading(false);
+      fetchAllUsers();
     } catch (error: any) {
       console.log(error);
       setError(error.message);
-      setLoading(false);
     }
-  };
-  useEffect(() => {
-    return () => {
-      fetchAllUsers();
-    };
   }, []);
 
   const Click = (id: any) => {
