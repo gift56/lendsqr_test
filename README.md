@@ -1,5 +1,7 @@
 ## Lendsqr
 
+<img src="/projectPic.png" width="500">
+
 for deployment npm run build
 
 ## This is the official codebase for Lendsqr project
@@ -7,6 +9,7 @@ for deployment npm run build
 Open [Lendsqr](https://) to preview the complete projects.
 
 ## Description
+
 This codebase is the frontend part of the website, containing 4 pages of documentation.
 
 ## Package Manager
