@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Card,
   EditModal,
@@ -9,15 +9,15 @@ import {
 } from "../../components";
 import { LoadingIcon, selectIcon } from "../../assets";
 import { cardData } from "../../utils/cardData";
-import { tableData, usersColumns } from "../../utils/tableData";
+import { usersColumns } from "../../utils/tableData";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import style from "../../styles/dashoboard.module.scss";
 import { Axios } from "../../config/config";
 import moment from "moment";
+import useUserStore from "../../store";
+import style from "../../styles/dashoboard.module.scss";
 
 const DashboardUser = () => {
-  const [data, setData] = useState(tableData);
-  const [loading, setLoading] = useState(false);
+  const { fetchAllUsers, allUsers, loading } = useUserStore();
   const [error, setError] = useState("");
 
   const [showFilter, setShowFilter] = useState(false);
@@ -25,12 +25,12 @@ const DashboardUser = () => {
   const [itemOffset, setItemOffset] = useState(0);
   const itemsPerPage = 14;
   const endOffset = itemOffset + itemsPerPage;
-  const currentData = data.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(data.length / itemsPerPage);
+  const currentData = allUsers.slice(itemOffset, endOffset);
+  const pageCount = Math.ceil(allUsers.length / itemsPerPage);
 
   // Invoke when user click to request another page.
   const handlePageClick = (event: any) => {
-    const newOffset = (event.selected * itemsPerPage) % data.length;
+    const newOffset = (event.selected * itemsPerPage) % allUsers.length;
     setItemOffset(newOffset);
   };
 
@@ -65,20 +65,12 @@ const DashboardUser = () => {
   };
 
   useEffect(() => {
-    const fetchAllUsers = async () => {
-      setLoading(true);
-      try {
-        const res = await Axios.get("/users");
-        setData(res.data);
-        setLoading(false);
-      } catch (error: any) {
-        setError(error.message);
-        setLoading(false);
-      }
-    };
-    return () => {
+    try {
       fetchAllUsers();
-    };
+    } catch (error: any) {
+      console.log(error);
+      setError(error.message);
+    }
   }, []);
 
   const Click = (id: any) => {
@@ -122,7 +114,7 @@ const DashboardUser = () => {
             <img src={LoadingIcon} alt="/" />
           </div>
         ) : error ? (
-          <div>Error : {error}</div>
+          <div className="fetchErr">Error : {error}</div>
         ) : (
           <>
             <div className={style.desktopTable}>

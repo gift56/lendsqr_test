@@ -4,10 +4,9 @@ import { LoadingIcon, selectIcon } from "../../assets";
 import { cardData } from "../../utils/cardData";
 import { usersColumns } from "../../utils/tableData";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import style from "../../styles/dashoboard.module.scss";
-// import { Axios } from "../../config/config";
 import useUserStore from "../../store";
 import moment from "moment";
+import style from "../../styles/dashoboard.module.scss";
 
 const Dashboard = () => {
   const [error, setError] = useState("");
@@ -54,20 +53,6 @@ const Dashboard = () => {
     }
   };
 
-  // const fetchAllUsers = async () => {
-  //   setLoading(true);
-  //   try {
-  //     const res = await Axios.get("/users");
-  //     console.log(res);
-  //     setData(res.data);
-  //     setAllUsers(res.data);
-  //     setLoading(false);
-  //   } catch (error: any) {
-  //     console.log(error);
-  //     setError(error.message);
-  //     setLoading(false);
-  //   }
-  // };
   useEffect(() => {
     try {
       fetchAllUsers();
