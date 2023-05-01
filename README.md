@@ -1,6 +1,6 @@
 ## Lendsqr
 
-<img src="public/projectPic.png" width="500">
+<img src="public/projectPic.png" width="800">
 
 for deployment npm run build
 
