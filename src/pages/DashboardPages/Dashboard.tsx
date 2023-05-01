@@ -114,7 +114,7 @@ const Dashboard = () => {
             <img src={LoadingIcon} alt="/" />
           </div>
         ) : error ? (
-          <div>Error : {error}</div>
+          <div className="fetchErr">Error : {error}</div>
         ) : (
           <>
             <div className={style.desktopTable}>
