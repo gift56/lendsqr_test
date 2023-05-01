@@ -10,7 +10,7 @@ import style from "../../styles/dashoboard.module.scss";
 
 const Dashboard = () => {
   const [error, setError] = useState("");
-  const { fetchAllUsers, allUsers, loading } = useUserStore();
+  const { fetchAllUsers, allUsers, loading, setLoading } = useUserStore();
 
   const [itemOffset, setItemOffset] = useState(0);
   const itemsPerPage = 14;
@@ -58,6 +58,7 @@ const Dashboard = () => {
       fetchAllUsers();
     } catch (error: any) {
       console.log(error);
+      setLoading(false);
       setError(error.message);
     }
   }, []);

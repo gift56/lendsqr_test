@@ -11,6 +11,8 @@ const useStore = (set: any) => ({
 
     set({ allUsers: response.data, loading: false });
   },
+  setLoading: (loading: boolean) =>
+    set((state: any) => ({ ...state, loading: loading })),
 });
 
 const useUserStore = create(

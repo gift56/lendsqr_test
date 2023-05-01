@@ -16,7 +16,7 @@ import useUserStore from "../../store";
 import style from "../../styles/dashoboard.module.scss";
 
 const DashboardUser = () => {
-  const { fetchAllUsers, allUsers, loading } = useUserStore();
+  const { fetchAllUsers, allUsers, loading, setLoading } = useUserStore();
   const [error, setError] = useState("");
 
   const [showFilter, setShowFilter] = useState(false);
@@ -68,6 +68,7 @@ const DashboardUser = () => {
       fetchAllUsers();
     } catch (error: any) {
       console.log(error);
+      setLoading(false);
       setError(error.message);
     }
   }, []);
