@@ -85,7 +85,9 @@ const Login = () => {
                 className={styles.input}
                 autoComplete="off"
               />
-              <p onClick={() => setShowPassword((prev) => !prev)}>Show</p>
+              <p onClick={() => setShowPassword((prev) => !prev)}>
+                {showPassword ? "Hide" : "Show"}
+              </p>
             </div>
             {errors.password && touched.password ? (
               <p className="errortxt">{errors.password}</p>
