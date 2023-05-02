@@ -71,7 +71,7 @@ const Dashboard = () => {
     organization: <span className={style.content}>{data.orgName}</span>,
     username: <span className={style.content}>{data.userName}</span>,
     email: <span className={style.content}>{data.email}</span>,
-    phone: <span className={style.content}>{data.phoneNumber}</span>,
+    phone: <span className={`${style.content} m0`}>{data.phoneNumber}</span>,
     date: (
       <span className={style.content}>
         {moment(data.createdAt).format("MMMM Do YYYY, h:mm:ss a")}
