@@ -67,13 +67,25 @@ const Dashboard = () => {
     alert(id);
   };
 
+  const truckcateString = (str: any, num: number) => {
+    if (str?.length > num) {
+      return str.slice(0, num) + "";
+    } else {
+      return str;
+    }
+  };
+
   const activities = currentData.map((data: any) => ({
-    organization: <span className={style.content}>{data.orgName}</span>,
-    username: <span className={style.content}>{data.userName}</span>,
-    email: <span className={style.content}>{data.email}</span>,
-    phone: <span className={`${style.content} m0`}>{data.phoneNumber}</span>,
-    date: (
+    organization: <span className={`${style.content} m0`}>{data.orgName}</span>,
+    username: <span className={`${style.content} m1`}>{data.userName}</span>,
+    email: <span className={`${style.content} m1`}>{data.email}</span>,
+    phone: (
       <span className={style.content}>
+        {truckcateString(data?.phoneNumber, 16)}
+      </span>
+    ),
+    date: (
+      <span className={`${style.content} m0`}>
         {moment(data.createdAt).format("MMMM Do YYYY, h:mm:ss a")}
       </span>
     ),
