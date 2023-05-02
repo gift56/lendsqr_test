@@ -76,7 +76,7 @@ const Dashboard = () => {
   };
 
   const activities = currentData.map((data: any) => ({
-    organization: <span className={`${style.content} m0`}>{data.orgName}</span>,
+    organization: <span className={style.content}>{data.orgName}</span>,
     username: <span className={`${style.content} m1`}>{data.userName}</span>,
     email: <span className={`${style.content} m1`}>{data.email}</span>,
     phone: (
@@ -85,7 +85,7 @@ const Dashboard = () => {
       </span>
     ),
     date: (
-      <span className={`${style.content} m0`}>
+      <span className={style.content}>
         {moment(data.createdAt).format("MMMM Do YYYY, h:mm:ss a")}
       </span>
     ),
